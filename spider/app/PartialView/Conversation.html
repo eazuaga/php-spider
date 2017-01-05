@@ -1,0 +1,33 @@
+<div id="Messages">
+    <div id="contentMessage" class="contentMessage MessageFixed">
+        <ul data-bind="foreach: Messages" class="chats">
+            <li data-bind="css :clase">
+                <div class="image">
+                    <img data-bind="attr: { src: avatar }, visible: false">
+                    <b data-bind="text:sender"></b>
+                    <i class="timesent" data-bind="text: sendDatetimeFromNow">
+                        <!--<a href="javascript:void(0)" data-bind="text:Traducir('answer'),visible:answerable,click :$root.Answer.bind($data,id)"></a>-->
+                    </i>
+                    <!--<span data-bind="text:answerOf"></span>-->
+                </div>
+                <p data-bind="text:content"></p>
+            </li>
+        </ul>
+        <div class="clear"></div>
+        <!--<fieldset>
+
+        </fieldset>-->
+
+    </div>
+    <div class="line">
+
+    </div>
+    <div class="input-plus-button">
+        <input data-bind="value: AnswerText"  id="respouesta" type="text" />
+        <button data-bind="attr: { 'data-label': Traducir('Send') }, click: send"><i class="fa fa-m-send"></i></button>
+        <!--<a data-bind="text:Traducir('Send'), click: send " class="field field-store btn-default field--store-My input" href="javascript:void(0)"> </a>-->
+    </div>
+
+
+</div>
+<script src="ViewModels/Messages.js"></script>

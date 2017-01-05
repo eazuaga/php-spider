@@ -1,0 +1,35 @@
+<div data-bind="visible:CurrentAccountVisible" id="CurrentAccount" class="contentMessage">
+    <div class="currrent-account-container">
+        <!--<div>
+            <h3 data-bind="text: Dealer" class="h-center"></h3>
+            <h4 data-bind="text: User" class="h-center sub-heading"></h4>
+        </div>-->
+        <div class="saldo">
+            <span data-bind="text: Traducir('Balance') + ': ' + Config.Currency.toUpperCase() + ' ' + Balance() "></span>
+        </div>
+        <!--<p>
+            <span data-bind="text: Traducir('previousBalance') + ' '+ Config.Currency.toUpperCase() + ': ' + previousBalance"></span>
+        </p>-->
+    </div>
+
+    <ul data-bind="foreach: CurrentAccount">
+        <li>
+            <ul data-bind="foreach: accounts" class="account-list">
+                <li class="account">
+                    <div class="material-card material-card-more">
+                       <div class="material-card_content">
+                            <a class="material-card_title" enabled="false" href="javascript:void(0)" data-bind="attr:{ href: '#!/AccountDetail/'+ description, 'data-account': description }  " >
+                                <span data-bind="text: description"></span>
+                            </a>
+                            <p data-bind="text: Config.Currency.toUpperCase() + ' ' + balance"></p>
+                       </div>
+                    </div>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<div data-bind="visible: MessageVisible() !== ''" class="material-container">
+    <h3 data-bind="text: MessageVisible()"></h3>
+</div>
+<script src="ViewModels/MyAccount/CurrentAccount.js"></script>

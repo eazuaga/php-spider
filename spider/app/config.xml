@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.dealerapp.rg" version="1.2.7" value="3.7.0"
+    xmlns="http://www.w3.org/ns/widgets"
+    xmlns:gap="http://phonegap.com/ns/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>rg</name>
+    <description>
+        Belize Diesel
+    </description>
+    <author email="soporte@autologica.com" href="http://autologica.com">
+        Autologica
+    </author>
+    <!-- Configuraciones -->
+    <preference name="permissions" value="none" />
+    <preference name="orientation" value="default" />
+    <preference name="target-device" value="universal" />
+    <preference name="fullscreen" value="false" />
+    <preference name="webviewbounce" value="true" />
+    <preference name="prerendered-icon" value="false" />
+    <preference name="stay-in-webview" value="false" />
+    <preference name="ios-statusbarstyle" value="black-opaque" />
+    <preference name="detect-data-types" value="true" />
+    <preference name="exit-on-suspend" value="false" />
+    <preference name="show-splash-screen-spinner" value="true" />
+    <preference name="auto-hide-splash-screen" value="true" />
+    <preference name="disable-cursor" value="false" />
+    <preference name="android-minSdkVersion" value="7" />
+    <preference name="android-installLocation" value="auto" />
+    <preference name="phonegap-version" value="3.7.0" />
+    <preference name="SplashScreen" value="screen" />
+    <preference name="SplashScreenDelay" value="2000" />
+    <!-- Caracteristicas Phonegap -->
+    <feature name="http://api.phonegap.com/1.0/device" />
+    <feature name="SplashScreen">
+        <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
+    </feature>
+    <feature name="http://api.phonegap.com/1.0/geolocation" />
+    <!-- Recursos para los Apps -->
+	 <platform name="ios">
+<!--               <icon src="res/ios/icon.png" width="57" height="57" />
+              <icon src="res/ios/icon@2x.png" width="114" height="114" />
+			  
+              <icon src="res/ios/icon-72.png" width="72" height="72" />
+              <icon src="res/ios/icon-72@2x.png" width="144" height="144" />
+ -->              
+			  
+			
+     </platform> 
+
+<!--     <icon src="icon.png" gap:platform="ios" width="57" height="57" /> -->
+
+    <icon src="res/icon/ios/icon-72.png" gap:platform="ios" width="72" height="72" />
+    <icon src="res/icon/ios/icon-57.png" gap:platform="ios" width="57" height="57" /> 
+    <icon src="res/icon/ios/icon-120.png" gap:platform="ios" width="120" height="120" />  	
+    <icon src="res/icon/ios/icon-152.png" gap:platform="ios" width="152" height="152" />  	
+    <icon src="res/icon/ios/icon-76.png" gap:platform="ios" width="76" height="76" />
+  	
+    <icon gap:density="ldpi" gap:platform="android" src="res/icon/android/icon4.png" />
+    <icon gap:density="mdpi" gap:platform="android" src="res/icon/android/icon3.png" />
+    <icon gap:density="hdpi" gap:platform="android" src="res/icon/android/icon2.png" />
+    <icon gap:density="xhdpi" gap:platform="android" src="res/icon/android/icon.png" />
+	
+    <gap:splash src="splash.png" />
+    <gap:splash gap:density="ldpi" gap:platform="android" src="res/screen/android/ldpi/screen.png" />
+    <gap:splash gap:density="mdpi" gap:platform="android" src="res/screen/android/mdpi/screen.png" />
+    <gap:splash gap:density="hdpi" gap:platform="android" src="res/screen/android/hdpi/screen.png" />
+    <gap:splash gap:density="xhdpi" gap:platform="android" src="res/screen/android/xhdpi/screen.png" />
+	
+    <gap:splash gap:platform="ios" height="480" src="res/screen/ios/mdpi/screen.png" width="320" />
+    <gap:splash gap:platform="ios" height="960" src="res/screen/ios/hdpi/screen.png" width="640" />
+    <gap:splash gap:platform="ios" height="1136" src="res/screen/ios/hdpi/screen.png" width="640" />
+    <gap:splash gap:platform="ios" height="1024" src="res/screen/ios/xhdpi/screen.png" width="768" />
+    <gap:splash gap:platform="ios" height="768" src="res/screen/ios/xhdpi/screen.png" width="1024" />
+    <!-- Pagina inicial -->
+    <content src="index.html" />
+    <!-- Plugins -->
+  <!--   <gap:plugin name="it.mobimentum.phonegapspinnerplugin" />
+    <gap:plugin name="nl.x-services.plugins.socialsharing" />
+    <gap:plugin name="org.apache.cordova.device" />
+    <gap:plugin name="org.apache.cordova.dialogs" />
+    <gap:plugin name="org.apache.cordova.geolocation" />
+    <gap:plugin name="nl.x-services.plugins.toast" />
+    <gap:plugin name="org.apache.cordova.splashscreen" />
+    <gap:plugin name="com.phonegap.plugins.pushplugin" />
+    <gap:plugin name="org.apache.cordova.network-information" />
+    <gap:plugin name="org.apache.cordova.media" />
+	    <gap:plugin name="org.apache.cordova.inappbrowser" />
+       <gap:plugin name="de.appplant.cordova.plugin.hidden-statusbar-overlay" /> -->
+    <!-- Aceptar CORS -->
+    <access origin="*" />
+    <!-- Habilitar App para debug Android -->
+    <!--<gap:config-file platform="android" parent="/manifest">
+        <application android:debuggable="true" />
+    </gap:config-file>-->
+   <gap:config-file platform="ios" parent="UIViewControllerBasedStatusBarAppearance" overwrite="true">
+    <false/>
+  </gap:config-file> 
+</widget>

@@ -1,0 +1,302 @@
+* {
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+}
+/*html, 
+body {
+    margin: 0;
+    font-family: "Open Sans", sans-serif;
+    background: #F5F5F5;
+    height: 100%;
+    position: relative;
+}*/
+
+
+.fa-chevron-right  {
+display:none !important;
+}
+#app {
+    width: 77%;
+    /*overflow-x: hidden;*/
+    min-height:100%;
+    /*position: absolute;*/
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.main-nav {
+    position: absolute;
+    top: 0;
+    width: 70%;
+    left:100%;
+    height: 100%;
+    background: #3B3B3B;
+    overflow-y: auto;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+
+}
+.menu--open {
+    overflow: hidden;
+}
+.menu--open #app {
+    left:-70%;
+}
+.menu--open .main-nav {
+    left:30%;
+}
+.main-nav a {
+    display: block;
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#3e3e3e), to(#383838));
+    background: -webkit-linear-gradient(#3e3e3e, #383838);
+    background: linear-gradient(#3e3e3e, #383838);
+    border-top: 1px solid #484848;
+    border-bottom: 1px solid #2E2E2E;
+    color: white;
+    padding: 15px;
+}
+.main-nav a:hover, .main-nav a:focus {
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#484848), to(#383838));
+    background: -webkit-linear-gradient(#484848, #383838);
+    background: linear-gradient(#484848, #383838);
+}
+.main-nav:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 34px;
+    background: -webkit-gradient(linear, 0 0, 100% 0, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.4)));
+    background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
+    background: linear-gradient(left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
+}
+.bar {
+    position: relative;
+}
+/*.bar--top {
+    background: #BA2234;
+    color: white;
+    font-size: 1.5em;
+    padding: .5em 1em;
+}*/
+
+.bar-title,
+.bar-tools {
+    display: inline-block;
+}
+.bar-tools {
+    position:absolute;
+    right: 0;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+.bar-tools.fake.active {
+    background: #931D2B;
+}
+.bar-tools,
+.bar-tools i,
+.bar-tools i:active,
+.bar-tools i:focus {
+    outline: 0!important;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+.bar-actions {
+    position: absolute;
+    left: 1em;
+}
+.bar-actions + .bar-title,
+.bar-tools + .bar-title {
+    display: block;
+    text-align: center;
+}
+
+.content {
+    height: 100%;
+    position: relative;
+    width: 100%;
+}
+
+/*puede ir a base css*/
+  /*.content {
+        height: 100%;
+        position: relative;
+        width: 100%;
+    }
+    .grid:before,
+    .grid:after {
+        content: " ";
+        display: table;
+    }
+
+    .grid:after {
+        clear: both;
+    }
+    .grid-cell {
+        float: left;
+    }
+    .grc-1-3 {
+        width: 33.33333333333%;
+        border: 1px solid #EBEBEB;
+    }
+    .launcher {
+        text-align: left;
+        color: #AAAAAA;
+        text-decoration: none;
+        overflow: hidden;
+        width: 100%;
+        padding: 0.9em;
+            border: 1px solid #EBEBEB;
+    }
+
+    .launcher-icon {
+        font-size: 3em;
+        display:block;
+    }
+    .launcher-text {
+            color: black;
+        font-size: 18px;
+        padding-left: 1em;
+    }
+    .launcher-textv {
+        color: #6E6E6E;
+        font-size: 1.3em;
+        padding-left: 1em;
+        font-weight: bold;
+    }*/
+
+
+@media (max-width: 769px) {
+        #app {
+        width: 100%;    
+        }
+            .grid:before,
+        .grid:after {
+            content: " ";
+            display: table;
+        }
+
+        .grid:after {
+            clear: both;
+        }
+        .grid-cell {
+            float: left;
+        }
+        .grc-1-3 {
+            width: 31.963333%;
+            border: 1px solid #EBEBEB;
+        }
+        .launcher {
+            text-align: center;
+            padding: 2.5em 1em;
+            color: #C19F62;
+            text-decoration: none;
+            /*min-height: 5em;*/
+            height: 33.1%;
+            overflow: hidden;
+            margin: 2px;
+            border:none ;
+            background-color: rgba(255, 255, 255, 0.5);
+            /*box-shadow: 1px 1px 1px #000;*/
+        }
+        .grid-cell  .fa {
+            color:white ;
+        }
+        .grid-cell  .launcher-text {
+            color:white ;
+        }
+        .myacc .launcher-text {
+         color:black;
+         }
+        .myacc .grid-cell  .fa {
+            color:white ;
+        }
+        .myacc .launcher {
+            border: 1px solid #EBEBEB;
+        }
+        .laun {
+            border: 1px solid #EBEBEB;
+            text-align:left;
+        }
+        .launcher--highlighted {
+            color: #BA2234;
+        }
+        .launcher.fake-active,
+        a:active{
+            /*background: #E5E5E5;*/
+        }
+        .launcher-icon {
+            font-size: 3em;
+            display:block;
+        }
+        .launcher-text {
+        color: #6E6E6E;
+        font-size: 0.7em;
+        /*font-family: roboto;*/
+        /*margin-top: 21px;*/
+        min-height: 2.8em;
+        }
+         .launcher-text {
+            font-size:14px;
+            display: inline-block;
+            padding: 0;
+            margin-top: 1em;
+            /*text-shadow: 2px 2px 4px #000000;*/
+        }
+
+            .launcher {
+            height: 23.3333% !important;
+        }
+        .launcher .fa {
+            display: block;
+        }
+        .launcher .ec { 
+            display: none;
+        }
+       
+        #launcher .powered-atl {
+            height: auto!important;
+            width: 100%;
+            color:white;
+        }
+
+}
+
+/*tablet*/
+@media (min-width: 770px) and (max-width: 1208px) {
+    #menu {
+        width: 28% !important;
+        float: left !important;
+    }
+     #app {
+        width: 72% !important;
+        min-height: 100%;
+        float: left !important;
+        }
+      .type-switcher {
+       background: #FFF;
+        color: #4588B2;
+        font-size: 1em;
+        padding: 0.9em 1em;
+        text-align: start;
+        list-style: none;
+        letter-spacing: -.3em;
+        border-bottom: 1px solid #E2E2E2;
+        }
+          fieldset {
+    width: 53%;
+    margin-left: 92px;
+}
+    #VistaTablet {
+    display:block;
+    }
+    #VistaMovil {
+    display:none;
+    }
+    
+  
+}
+

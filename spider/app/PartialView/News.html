@@ -1,0 +1,17 @@
+﻿<div id="News" class="">
+    <div id="people">
+        <div class="content">
+            <ul id="lstStores" data-bind="foreach:News" class="list">
+                <li class="item item--store clickeable">
+                    <a class="" data-bind="attr: { href: link, title: title}">
+                        <div data-bind="text:title" class="item--store-name"></div>
+                        <div data-bind="text:content" class="item--store-content"></div>
+                        <img data-bind="attr:{src:img}" />
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+<script src="ViewModels/News.js"></script>

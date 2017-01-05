@@ -1,0 +1,21 @@
+<div data-bind="visible:vehicleHistoryVisible" id="VehicleHistory">
+
+    <ul data-bind="foreach : stories">
+        <li class="material-card material-card-more">
+            <a data-bind="attr:{href:'#!/DetailsHistory/'+id}" href="javascript:void(0)">
+                <div class="material-card_content">
+                    <h2 data-bind="text: date" class="material-card_title"></h2>
+                    <h3 data-bind="text: Traducir('Store') +': ' + store"></h3>
+
+                    <p data-bind="text: description" class="item--vehicleHistory-content"></p>
+                </div>
+
+            </a>
+
+        </li>
+    </ul>
+</div>
+<div data-bind="visible: MessageVisible() !== ''" class="material-container">
+    <h3 data-bind="text: MessageVisible()"></h3>
+</div>
+<script src="ViewModels/MyAccount/VehicleHistory.js"></script>

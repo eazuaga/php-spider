@@ -1,0 +1,28 @@
+<div data-bind="visible:CurrentAccountVisible" id="CurrentAccount" class="contentMessage currrent-account-container">
+    <h3 class="acount">
+        <span data-bind="text: Account.description + ': ' + Config.Currency.toUpperCase() + ' ' + Account.balance"></span>
+    </h3>
+    <table class="data-table account-detail">
+        <thead class="cf">
+            <tr>
+                <th data-bind="text:Traducir('Description')"></th>
+                <th data-bind="text:Traducir('Date')"></th>
+                <th data-bind="text:Traducir('exchangeRateAbbr')" class="numeric-cell"></th>
+                <th data-bind="text:Traducir('Ammount')" class="numeric-cell"></th>
+                <!--<th data-bind="text:Traducir('Credit')"></th>-->
+                <th data-bind="text:Traducir('FinalBalance')" class="numeric-cell"></th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: Account.vouchers.reverse()">
+            <tr>
+                <td data-bind="text: description"></td>
+                <td data-bind="text: date"></td>
+                <td data-bind="text: exchangeRate" class="numeric-cell"></td>
+                <td data-bind="text: ammount" class="numeric-cell"></td>
+                <!--<td data-bind="text: credit"></td>-->
+                <td data-bind="text: FinalBalance" class="numeric-cell"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<script src="ViewModels/MyAccount/CurrentAccount.js"></script>

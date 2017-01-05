@@ -1,0 +1,103 @@
+<div id="MyAccount">
+    <div class="content " >
+        <div class="content  item--store List">
+            <a class="launcher laun clickeable" href="#!/Notifications" data="#!/Notifications">
+                <span data-bind="text:Traducir('Notifications')" class="launcher-text "></span>
+                <div data-bind="text:Traducir('enabledAcount')" class="MyacountSecction"></div>
+                <!--<i class="fa fa-chevron-right right"></i>-->
+            </a>
+        </div>
+        <div class="logged content  item--store List">
+            <a class="launcher laun  clickeable" href="#!/MyCars" data="#!/MyCars">
+                <span data-bind="text: Traducir('my-' + Config.dealerType)" class="launcher-text"></span>
+                <!--<i class="fa fa-chevron-right right"></i>-->
+                <div data-bind="text:Traducir('findcars')" class="MyacountSecction"></div>
+            </a>
+        </div>
+        <div class="logged content  item--store List">
+            <a class="launcher laun  clickeable" href="#!/CurrentAccount" data="#!/CurrentAccount">
+                <span data-bind="text:Traducir('CurrentAccount')" class="launcher-text"></span>
+                <div data-bind="text:Traducir('stateAcount')" class="MyacountSecction"></div>
+            </a>
+        </div>
+        <div class="logged content  item--store List">
+            <a class="launcher laun  clickeable" href="#!/MyData" data="#!/MyData">
+                <span data-bind="text:Traducir('MyData')" class="launcher-text"></span>
+                <div data-bind="text:Traducir('myprofiletext')" class="MyacountSecction"></div>
+            </a>
+        </div>
+        <div class="content  item--store List">
+            <a class="launcher laun  clickeable" href="#!/MyOrders" data="#!/Terms">
+                <span data-bind="text:Traducir('MyOrders')" class="launcher-text "></span>
+                <div data-bind="text:Traducir('findorders')" class="MyacountSecction"></div>
+            </a>
+        </div>
+        <div class="content  item--store List">
+            <a class="launcher laun  clickeable" href="#!/Terms" data="#!/Terms">
+                <span data-bind="text:Traducir('Terms')" class="launcher-text "></span>
+                <div data-bind="text:Traducir('seetherems')" class="MyacountSecction"></div>
+            </a>
+        </div>
+        <div class="logged content  item--store List">
+            <a data-bind="visible :userStatus ,click: Logout" class="launcher laun  clickeable" href="javascript:void(0)">
+
+                <span data-bind="text:Traducir('Signoff')" class="launcher-text "></span>
+
+            </a>
+        </div>
+    </div>
+
+
+
+    <!--<div class="store--phone-mail">
+        , enabledAcount: "Active o desactive las notificaciones que llegan al su celular"
+        , findcars: "Encuentre o edite los dato de sus unidades ingresadas. Tambien puede cargar una nueva"
+        , stateAcount: "Consulte su estado de Cuenta Corriente que mantiene con la concesionaria"
+        , myprofiletext: "Modifique o agregue datos a su perfil para un mejor contacto con su concesionaria"
+        , findorders: "Aqui encontrara las solicitudes de repuestos"
+        , seetherems: "Consulte los terminos y condiciones"
+
+        !--<a data-bind="visible :userStatusNot" class="field field-store field--store-My ButtonMenu" href="#!/Login">
+            <span data-bind="text:Traducir('Telefono')" class="field-label"></span>
+            <i class="fa fa-user fa-3x left"></i>
+            <span class="launcher-textv ">Login</span>
+        </a>
+
+        <br />
+        --<a class="field field-store field--store-My ButtonMenu" href="#!/Notifications">
+            <i class="fa fa-exclamation fa-3x left"></i>
+            <span data-bind="text:Traducir('Notifications')" class="launcher-textv "></span>
+        </a>
+        <br />
+        <a class="field field-store field--store-My ButtonMenu" href="#!/Terms">
+            <i class="fa fa-gavel fa-3x left"></i>
+            <span data-bind="text:Traducir('Terms')" class="launcher-textv"></span>
+        </a>
+        <div data-bind="visible :userStatus" class="logged">
+           <a class="field field-store field--store-My ButtonMenu" href="#!/MyCars">
+                <i class="fa fa-car fa-3x left"></i>
+                <span data-bind="text:Traducir('MyCars')" class="launcher-textv"></span>
+            </a>
+            <br />
+            <a class="field field-store field--store-My ButtonMenu" href="#!/CurrentAccount">
+                <i class="fa fa-credit-card fa-3x left"></i>
+                <span data-bind="text:Traducir('CurrentAccount')" class="launcher-textv"></span>
+            </a>
+            <br />
+             <a class="field field-store field--store-My ButtonMenu" href="#!/MyData">
+                 <i class="fa fa-users fa-3x left"></i>
+            <span data-bind="text:Traducir('MyData')" class="launcher-textv"></span>
+            </a>
+            <br />
+            <a data-bind="visible :userStatus ,click: Logout" class="field field-store field--store-My ButtonMenu" href="javascript:void(0)">
+                <i class="fa fa-user fa-3x left"></i>
+                <span data-bind="text:Traducir('Signoff')" class="launcher-textv "></span>
+            </a>
+        </div>
+    </div>-->
+</div>
+
+
+
+
+<script src="ViewModels/MyAccount/MyAccount.js"></script>

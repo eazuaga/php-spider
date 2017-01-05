@@ -1,0 +1,138 @@
+
+<div id="inventory" data="oc" class="transitionx">
+    <!--data="oc" class="oc"-->
+    <div class="content">
+
+        <ul class="list material-tabs">
+            <li class="type-switcher">
+                <div id="0" data-bind="click: filter.bind($data,0), attr: { class: clase0 }, text:Traducir('NEW')" class="material-tabs_tab">New</div>
+                <div id="1" data-bind="click: filter.bind($data,1), attr: { class: clase1 }, text:Traducir('USED')" class="material-tabs_tab">Used</div>
+            </li>
+        </ul>
+
+        <div data-bind="visible:enabled" class="searcher">
+            <form class="left-aligned-form" id="filter">
+                <fieldset id="news">
+
+                    <!--<select class="SelType" data-bind=" options: TypeCar, selectedOptions:SelectTypeCar,value:SelectTypeCar ,optionsText: 'name' ,optionsValue: 'value',event :{change:changeType}" name="type"></select>-->
+                    <select class="SelType" data-bind=" options: TypeCar, selectedOptions:SelectTypeCar,value:SelectTypeCar ,optionsText: 'name' ,optionsValue: 'value'" name="type"></select>
+                    <select class="SelBrand" data-bind="options: brands, selectedOptions:Selectedbrand , value:Selectedbrand, optionsText: 'name',optionsValue: 'value',event :{change:changeMake}"></select>
+                    <select class="SelModel" data-bind="options: Models,selectedOptions:SelectedModel, value:SelectedModel, optionsText: 'name',optionsValue: 'value'"></select>
+                    <select class="SelFuel" data-bind="options: Fuel,selectedOptions:SelectedFuel, value:SelectedFuel ,optionsText: 'name' ,optionsValue: 'value',visible:visibleSelFuel" name="combustible"></select>
+                    <div id="used">
+
+                        <label class="item--vehicle-title short" data-bind="text:Traducir('Price')" for="desde"></label>
+                        <label class="item--vehicle-title short" data-bind="text:Config.Currency" for="desde"></label>
+                        (
+                        <label class="item--vehicle-title short" id="SpnPriceFrom">3878.05</label>
+                        -
+                        <label class="item--vehicle-title short" id="SpnPriceTo">3878.05</label>
+                        )
+                        <div class="field-slider">
+                            <div id="slider-Price"> </div>
+                        </div>
+                        <input type="hidden" id="HndPriceFrom" name="desde" value="">
+                        <input type="hidden" id="HndPriceTo" name="hasta" value="">
+                        <div class="field-slider">
+                            <label class="item--vehicle-title short" data-bind="text:Traducir('Year')" for="añoDesde"></label>
+                            (
+                            <label class="item--vehicle-title short" id="yearFrom">3878.05</label>
+                            -
+                            <label class="item--vehicle-title short" id="yearTo">3878.05</label>
+                            )
+
+                        </div>
+
+
+                        <div class="field-slider">
+                            <div id="slider-handles"> </div>
+                        </div>
+                        <input type="text" style="display: none" name="añoDesde" value="">
+                        <input type="text" name="añoHasta" style="display: none" value="">
+
+                    </div>
+                    <a data-bind="text:Traducir('Search'),click: search " class="field field-store field--store-My btn-default input" href="javascript:void(0)">
+
+                    </a>
+                    <a data-bind="text:Traducir('ClearFilter'),click: Clear " style="display: none" class="field field-store field--store-My input" href="javascript:void(0)"></a>
+                </fieldset>
+            </form>
+
+        </div>
+        <div id="ListCars" data-bind="visible:CountResult">
+            <h3 data-bind="text :NumberResult"> </h3>
+        </div>
+        <div class="ListCarsView">
+            <ul data-bind="foreach: ListaInventario,visible:GalleryCar" class="list">
+                <li class="item item--vehicle lightShadow material-card material-card-more" style="display: list-item;">
+                    <div data-bind="text:model" class="item--vehicle-title titlevehiclefront"></div>
+                    <article class="media _item--vehicle-content" data-bind="click: function () { location.href = '#!/InventoryDetails/'+ id  }">
+                        <div class="media-item">
+                            <a class="clickeable" data-bind="attr:{href:'#!/InventoryDetails/'+ id}">
+                                <img id="carImage" data-bind="attr:{src:  image}" class="item--vehicle-image" />
+                            </a>
+                        </div>
+                        <div class="media-content _item--vehicle-details">
+                            <div class="media-content-body">
+                                <a data-bind="attr:{href:'#!/InventoryDetails/'+ id}" class="clickeable">
+                                    <div data-bind="text:make +' '+ model+ ' ' + year" class="item--vehicle-title titlevehicle"></div>
+                                    <div data-bind="visible: priceVisible" class="item--vehicle-price">
+                                        <span class="item--vehicle-title" data-bind="text: Traducir('Price') + ': '"></span>
+                                        <span class="bold" data-bind="text: currency "></span>
+                                        <span data-bind="text: price "></span>
+                                    </div>
+                                    <div data-bind="visible:$root.visibleField(mileage)" class="item--vehicle-kms">
+                                        <span class="item--vehicle-title" data-bind="text:Traducir('mileage')"></span>
+                                        <span data-bind="text: mileage "></span>
+                                    </div>
+                                    <div data-bind="visible:$root.visibleField(fuel)" class=" item--vehicle-fuel">
+                                        <span class="item--vehicle-title" data-bind="text:Traducir('fuel') + ':'"></span>
+                                        <span data-bind="text: Traducir(fuel) "></span>
+                                    </div>
+                                </a>
+                                <div class="media-actions buttonsCars">
+                                    <a class="phonecar  " data-bind="attr:{href:'tel:'+Config.usedContact.phone}" href="tel:011-47856985"><i class="fa fa-phone min2"></i></a>
+                                    <a data-bind="attr:{href:'mailto:'+Config.usedContact.email}" href="mailto:abc@autologica.com"><i class="fa fa-envelope min2 "></i></a>
+                                    <a href="javascript:void(0)" data-bind="click: $root.share.bind($data, make + ' ' + model + ' ' + year + (!priceVisible ? '' : (' - ' + Config.Currency + ' ' + price)), '' , image, url)">
+                                        <i class="fa fa-share-alt min2"></i>
+                                    </a>
+                                </div>
+                                <a data-bind="attr:{href:'#!/InventoryDetails/'+ id}" href="javascript:void(0)" class="item--vehicle-share  item--vehicle-link clickeable">
+                                    <!--<i class="fa fa-ellipsis-h flechita"></i>-->
+                                </a>
+
+                            </div>
+                        </div>
+                        <!--<span data-bind="visible:destacado" class="starred"><i class="fa fa-star min"></i><label data-bind="text:Traducir('starred')"></label></span>-->
+                    </article>
+                    <div class="clear"></div>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+<div data-bind="visible: resultMessage() != ''">
+    <p data-bind="text: resultMessage()" style="text-align: center;"></p>
+</div>
+<script src="ViewModels/detodo.js"></script>
+<script>
+    //-----------------------------------------------------
+    //Barra que nos sigue
+    $('.material-tabs-fixed').remove();
+    var _tabs = $('.material-tabs');
+    if(_tabs.length > 0) {
+        offset = _tabs.offset();
+        var fromtop = offset.top;
+        var _tabsFixed = null;
+        $(window).scroll(function () {
+            var dist = $(this).scrollTop();
+            if (dist > fromtop) {
+                _tabsFixed = _tabs.clone(true, true).addClass('material-tabs-fixed');
+                $('body').append(_tabsFixed);
+            } else {
+                $('.material-tabs-fixed').remove();
+            }
+        });
+    }
+</script>

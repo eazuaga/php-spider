@@ -1,0 +1,61 @@
+/* #2E2E2E */
+.bar--top {
+    background: #2E2E2E;
+    color: #FFF;
+    border-bottom: 1px solid #2E2E2E;
+}
+#iconMenu {
+    color: #FFF;
+}
+.switch-option__selected {
+    background: #2E2E2E;
+    border-bottom: white;
+}
+.switch-option {
+    background: #2E2E2E;
+    /*border: 2px solid #999999;*/
+}
+.btn-default {
+    background: #999999!important;
+    color: #FFFFFF!important;
+}
+.btn-default a {
+    color: #FFFFFF!important;
+}
+.btn-default i {
+    color: #FFFFFF!important;
+}
+.editcar i {
+    color: #FFF!important;
+}
+.staff-name {
+    color: #2E2E2E;
+}
+.owl-theme .owl-controls .owl-page.active span,
+.starred,
+.acounts,
+.noUi-connect,
+.IconButton {
+    background: none repeat scroll 0 0 #999999; 
+}
+/*.buttonsCars a ,.buttonsParts a ,.buttonsCars .phonecar ,.addCart {
+    background: none repeat scroll 0 0 #999999;
+}*/
+/*@media (max-width: 769px) {
+    .backimage {
+        background-color: #2E2E2E;
+          background-position: center center;
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-size: cover;
+    }
+}*/
+.notification-unread {
+    color: #2E2E2E;
+}
+.store--phone-mail-widget a i {
+    color: #607D8B!important;
+}
+.material-card_actions a i {
+    color: #607D8B!important;
+}

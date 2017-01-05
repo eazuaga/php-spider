@@ -1,0 +1,24 @@
+
+<div id="Offerts" class="">
+    <div>
+        <div class="content">
+            <div id="lstOffers" data-bind="foreach: Offerts" class="content">
+                <a href="javascript:void(0)" class="clickeable material-card material-card-horizontal material-card-more" data-bind="attr: { href: link}">
+                    <!--<i class="fa fa-chevron-right right"></i>-->
+                    <span class="material-card_image">
+                        <img data-bind="attr: { src: img }" />
+                    </span>
+                    <span class="material-card_content">
+                        <div data-bind="text: title" class="material-card_title"></div>
+                        <p data-bind="text: content" class="material-card_maincontent"></p>
+                        <p data-bind="text: Traducir('EffectiveThrough') + ': ' + dateTo, visible: dateTo != ''"></p>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div data-bind="visible: resultMessage() != ''">
+    <p data-bind="text: resultMessage()" style="text-align: center;"></p>
+</div>
+<script src="ViewModels/Offerts.js"></script>

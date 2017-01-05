@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.phonegap.dealerApp" version="0.9.1" value="3.6.3"
+    xmlns="http://www.w3.org/ns/widgets"
+    xmlns:gap="http://phonegap.com/ns/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+   <name>DealerApp</name>
+  <username>pablo.botta@autologica.com</username>
+  <password>user</password>
+    <description>
+        DealearApp App
+    </description>
+    <author email="soporte@autologica.com" href="http://autologica.com">
+        Autologica
+    </author>
+    <!-- Configuraciones -->
+    <preference name="permissions" value="none" />
+    <preference name="orientation" value="default" />
+    <preference name="target-device" value="universal" />
+    <preference name="fullscreen" value="false" />
+    <preference name="webviewbounce" value="true" />
+    <preference name="prerendered-icon" value="false" />
+    <preference name="stay-in-webview" value="false" />
+    <preference name="ios-statusbarstyle" value="black-opaque" />
+    <preference name="detect-data-types" value="true" />
+    <preference name="exit-on-suspend" value="false" />
+    <preference name="show-splash-screen-spinner" value="true" />
+    <preference name="auto-hide-splash-screen" value="true" />
+    <preference name="disable-cursor" value="false" />
+    <preference name="android-minSdkVersion" value="7" />
+    <preference name="android-installLocation" value="auto" />
+    <preference name="phonegap-version" value="3.6.3" />
+    <preference name="SplashScreen" value="screen" />
+    <preference name="SplashScreenDelay" value="2000" />
+    <!-- Caracteristicas Phonegap -->
+    <feature name="http://api.phonegap.com/1.0/device" />
+    <feature name="SplashScreen">
+        <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
+    </feature>
+    <feature name="http://api.phonegap.com/1.0/geolocation" />
+    <!-- Recursos para los Apps -->
+    <icon src="icon.png" />
+    <icon gap:density="ldpi" gap:platform="android" src="res/icon/android/icon4.png" />
+    <icon gap:density="mdpi" gap:platform="android" src="res/icon/android/icon3.png" />
+    <icon gap:density="hdpi" gap:platform="android" src="res/icon/android/icon2.png" />
+    <icon gap:density="xhdpi" gap:platform="android" src="res/icon/android/icon.png" />
+    <gap:splash src="splash.png" />
+    <gap:splash gap:density="ldpi" gap:platform="android" src="res/screen/android/ldpi/screen.png" />
+    <gap:splash gap:density="mdpi" gap:platform="android" src="res/screen/android/mdpi/screen.png" />
+    <gap:splash gap:density="hdpi" gap:platform="android" src="res/screen/android/hdpi/screen.png" />
+    <gap:splash gap:density="xhdpi" gap:platform="android" src="res/screen/android/xhdpi/screen.png" />
+    <gap:splash gap:platform="ios" height="480" src="res/screen/android/mdpi/screen.png" width="320" />
+    <gap:splash gap:platform="ios" height="960" src="res/screen/android/hdpi/screen.png" width="640" />
+    <gap:splash gap:platform="ios" height="1136" src="res/screen/android/hdpi/screen.png" width="640" />
+    <gap:splash gap:platform="ios" height="1024" src="res/screen/android/hdpi/screen.png" width="768" />
+    <gap:splash gap:platform="ios" height="768" src="res/screen/android/xhdpi/screen.png" width="1024" />
+    <!-- Pagina inicial -->
+    <content src="index.html" />
+    <!-- Plugins -->
+    <gap:plugin name="it.mobimentum.phonegapspinnerplugin" />
+    <gap:plugin name="nl.x-services.plugins.socialsharing" />
+    <gap:plugin name="org.apache.cordova.device" />
+    <gap:plugin name="org.apache.cordova.dialogs" />
+    <gap:plugin name="org.apache.cordova.geolocation" />
+    <gap:plugin name="nl.x-services.plugins.toast" />
+    <gap:plugin name="org.apache.cordova.splashscreen" />
+    <gap:plugin name="com.phonegap.plugins.PushPlugin" version="2.4.0" />
+    <gap:plugin name="org.apache.cordova.network-information" />
+    <!-- Aceptar CORS -->
+    <access origin="*" />
+    <!-- Habilitar App para debug Android -->
+    <!--<gap:config-file platform="android" parent="/manifest">
+        <application android:debuggable="true" />
+    </gap:config-file>-->
+</widget>

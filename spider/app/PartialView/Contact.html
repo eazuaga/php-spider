@@ -1,0 +1,93 @@
+<div id="Contact" class="" data-role="page" data="oc">
+
+
+    <!--smeagol dice que tiene peso estetixco-->
+    <div data-bind="visible:imgVisible" class="view-title view--store-name">
+        <img data-bind="attr:{src:currentImage}" class="view-image" />
+
+        <h3 data-bind="text: TitleBranch" class="title-inimage"></h3>
+    </div>
+
+    <div id="viewStore" class="view view--store show" style="">
+        <!--|| currentImage != null-->
+        <a data-bind="attr : {href:currentLocationBranchGoogleMaps}" class="field field-store field--store-location">
+            <i class="fa fa-m-location fa-3x"></i> <span data-bind="text:currentLocationBranch" class="field-content store-location location"> </span>
+        </a>
+        <div class="store--phone-mail-widget">
+                <a data-bind="attr:{ href: currentPhoneBranchParsed }, visible: VisibleCurrentPhoneBranchParsed" class="">
+                    <i class="fa fa-m-phone fa-3x white"></i>
+                </a>
+                <a data-bind="attr:{ href: mailParsed }, visible: VisibleMailParsed" class="">
+                    <i class="fa fa-m-email fa-3x white"></i>
+                </a>
+
+        </div>
+
+        <div id="areaStaff">
+            <div class="area">
+                <!--data-bind="foreach: Contacts" ver como itera-->
+                <div class="view-content-title view--store-area-title">
+                    <!--<span data-bind="text:name" class="area-name"></span>-->
+                    <div>
+                        <div data-bind="foreach: Contacts" class="staff">
+                            <div class="department">
+                                <span data-bind="text:department">t</span>
+                                <div class="staff-header">
+                                        <img data-bind="attr:{src:img},visible:$root.GenericImagePeople" alt="" class="staff-avatar">
+                                        <div class="staff-header-detail">
+                                            <span data-bind="text:name" class="staff-name"></span>
+                                            <span data-bind="text:role" class="staff-position"></span>
+                                        </div>
+                                        <div class="staff-content">
+                                            <!--<a data-bind="attr: { href: PhoneParsed},visible :HavePhoneParsed" class="field field-staff field--staff-phone">
+                                                <i class="fa fa-m-phone "></i>
+                                            </a>
+                                            <a data-bind="attr: { href: MailParsed},visible:HaveEmail" class="field field-staff field--staff-email">
+                                                <i class="fa fa-m-email"></i>
+                                            </a>
+                                            <a data-bind="attr: { href: SMSParsed} , visible:HaveSMSParsed">
+                                                <i class="fa fa-m-sms"></i>
+                                            </a>-->
+                                            <div class="material-card_actions">
+                                                <a data-bind="attr: { href: PhoneParsed },visible: HavePhoneParsed" class="material-card_action">
+                                                    <i class="fa fa-m-phone"></i>
+                                                </a>
+                                                <a data-bind="attr: { href: MailParsed }, visible:HaveEmail" class="material-card_action">
+                                                    <i class="fa fa-m-email"></i>
+                                                </a>
+                                                <a data-bind="attr: { href: SMSParsed }, visible:HaveSMSParsed" class="material-card_action">
+                                                    <i class="fa fa-m-sms"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+
+                            <!--<div data-bind="foreach: staff">-->
+
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+        <div class="socialNet store-social">
+            <ul data-bind="foreach: SocialNetworks">
+                <!--<h4 class="store-social_title" data-bind="text: Traducir('FindUsOn')"></h4>-->
+                <!--<li>
+                <a data-bind="attr: { href: link , class: type}"><i data-bind="attr: {class: 'fa fa-2x social fa-' + type }"></i></a>
+            </li>-->
+                <li><a data-bind="click :$root.OpenExternalLink.bind(link) ,attr: { class:type} "><i data-bind="attr:{class:'fa fa-'+type +' fa-2x social'}"></i></a></li>
+            </ul>
+        </div>
+    </div>
+
+
+</div>
+<!--<script src="js/linq.min.js"></script>-->
+<script src="ViewModels/Contact.js"></script>

@@ -1,0 +1,62 @@
+.bar--top {
+    background: #E11428;/*fcc600*/
+    color: #FFF;
+    border-bottom: 1px solid #E11428;
+}
+#iconMenu {
+    color: #FFF;
+}
+.switch-option__selected {
+    background: #E11428;
+    border-bottom: white;
+    color: white!important;
+}
+.switch-option {
+    background: #E11428;
+    color: #ffcdd2;
+    /*border: 2px solid #BBB;*/
+}
+.btn-default {
+    background: #BBB!important;
+    color: #FFFFFF!important;
+}
+.btn-default a {
+    color: #FFFFFF!important;
+}
+.btn-default i {
+    color: #FFFFFF!important;
+}
+.editcar i {
+    color: #FFF!important;
+}
+.staff-name {
+    color: #E11428;
+}
+.owl-theme .owl-controls .owl-page.active span,
+.starred,
+.acounts,
+.noUi-connect,
+.IconButton {
+    background: none repeat scroll 0 0 #BBB; 
+}
+/*.buttonsCars a ,.buttonsParts a ,.buttonsCars .phonecar ,.addCart {
+    background: none repeat scroll 0 0 #BBB;
+}*/
+/*@media (max-width: 769px) {
+    .backimage {
+        background-color: #E11428;
+          background-position: center center;
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-size: cover;
+    }
+}*/
+.notification-unread {
+    color: #E11428;
+}
+.store--phone-mail-widget a i {
+    color: #607D8B!important;
+}
+.material-card_actions a i {
+    color: #607D8B!important;
+}

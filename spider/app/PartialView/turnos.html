@@ -1,0 +1,111 @@
+       <div id="turnos" class="">
+
+           <!--<div id="contentApoint" class="content">
+
+           </div>-->
+
+           <div id="formApoint" style="display: none;" class="form-custom">
+               <fieldset>
+                   <form class="left-aligned-form">
+                       <h3 data-bind="text: Traducir('ContactInformation')"></h3>
+                       <fieldset class="form-group">
+                       <div>
+                           <input id="name" type="text" data-bind="value: Appoint.user.name, attr: {placeholder:Traducir('Name')}" name="username" />
+                           <span class="flag-obligatorio">*</span>
+                       </div>
+                       <div>
+                           <input type="text" data-bind="value: Appoint.user.surename, attr: {placeholder: Traducir('Surname')}" name="username" />                                <span class="flag-obligatorio">*</span>
+                        </div>
+                       <div>
+                           <input type="text" emailvalid="true" data-bind="value: Appoint.user.email" placeholder="Email" name="username" />
+                           <span class="flag-obligatorio">*</span>
+                       </div>
+                       </fieldset>
+
+                       <h3 data-bind="text: Traducir('AppointmentInformation')"></h3>
+                       <fieldset class="form-group">
+                       <select id="ddlBranchs" data-bind="options: Branchs, value: SelectedBranch, optionsText: 'name', optionsCaption: Traducir('Store')"></select>
+                       <span class="flag-obligatorio">*</span>
+                       <div class="input-field">
+                           <input type="text" data-bind="value: Appoint.date, attr:{placeholder:Traducir('Date')}" class="date-input-css" />
+                           <i class="fa fa-calendar input-decoration"></i>
+                           <span class="flag-obligatorio">*</span>
+                       </div>
+                       </fieldset>
+
+                       <h3 data-bind="text: Traducir('ServiceInformation')"></h3>
+                       <fieldset class="form-group">
+
+                       <select id="ddlMakes" data-bind="options: Makes, value: SelectedMake, optionsText: 'name', optionsCaption: Traducir('SelectMake')"></select>
+                       <span class="flag-obligatorio">*</span>
+
+                       <select id="ddlModels" data-bind="options: Models, value: SelectedModel, optionsText: 'name', optionsCaption: Traducir('SelectModel'), enable : Models"></select>
+                       <span class="flag-obligatorio">*</span>
+
+                       <select id="ddlYears" data-bind="options: Years, value: SelectedYear, optionsText: 'name', optionsCaption: Traducir('SelectYearModel'), enable : Years"></select>
+                       <span class="flag-obligatorio">*</span>
+
+                       <input type="text" data-bind="value: Appoint.vehicle.licensePlate, attr: { placeholder: Traducir('Patent') }, visible: !isAgroDealer" name="licensePlate" />
+                       <span class="flag-obligatorio" data-bind="visible: !isAgroDealer">*</span>
+
+                       <input type="text" data-bind="value: Appoint.vehicle.vin, attr: { placeholder: 'VIN' }, visible: isAgroDealer" name="vin" />
+                       <span class="flag-obligatorio" data-bind="visible: isAgroDealer">*</span>
+
+                       <textarea data-bind="value: Appoint.Comments, attr:{placeholder:Traducir('Comments')}"></textarea>
+                       <span class="flag-obligatorio">*</span>
+                       </fieldset>
+                       <a data-bind="click: Submit,text:Traducir('Send') " class="field field-store field--store-My input btn-default" href="javascript:void(0)">
+
+                       </a>
+                   </form>
+               </fieldset>
+           </div>
+       </div>
+<!--<script src="js/jquery.validate.js"></script>-->
+<script src="ViewModels/Appoint.js"></script>
+<script>
+    $(function () {
+        var field = null;
+        var popStateListener = function(e) {
+            _calendar.datepicker("hide");
+        };
+        var _calendar = $(".date-input-css").datepicker({
+            showButtonPanel: true,
+            showOn: "button",
+            closeText: Traducir("Cancel"),
+            onClose: function () {
+                if(field !== null) {
+                    $(field).remove();
+                }
+                $(".bar--top, .main_content").removeClass("content-overlayed");
+                window.removeEventListener('popstate', popStateListener, false);
+            },
+        });
+        try {
+            _calendar.datepicker("option", $.datepicker.regional[Config.LenguajeApp]);
+        }
+        catch (err) {
+            _calendar.datepicker("option", $.datepicker.regional['en']);
+        }
+        _calendar.click(function (e) {
+            history.pushState(null, "", location.hash + "/datepicker");
+            window.addEventListener("popstate", popStateListener, false);
+            e.stopImmediatePropagation();
+            e.preventDefault();
+            e.stopPropagation();
+            field = document.createElement('input');
+            field.setAttribute('type', 'text');
+            document.body.appendChild(field);
+            document.body.insertBefore(field, document.body.firstChild);
+            setTimeout(function() {
+                field.focus();
+                setTimeout(function() {
+                    field.setAttribute('style', 'display:none;');
+                }, 50);
+            }, 50);
+
+            $(".bar--top, .main_content").addClass("content-overlayed");
+            _calendar.datepicker("show");
+        });
+    })
+</script>

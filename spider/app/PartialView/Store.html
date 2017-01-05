@@ -1,0 +1,49 @@
+
+<div id="branch" style="height: 100%" data="oc" class="oc">
+    <div class="titleStore">
+        <span data-bind="text:Traducir('Stores')"></span>
+    </div>
+    <div style="height: 100%" id="people">
+        <div class="content">
+
+
+            <ul id="lstStores" data-bind="foreach:Branchs" class=" List">
+                <li class="material-card material-card-more" style="display: list-item;">
+                    <article class="media _item--vehicle-content">
+                        <div class="media-item">
+                            <a class="clickeable" data-bind="attr: { href: url}">
+                                <img id=" carimage" data-bind="attr:{src: img}" class="item--vehicle-image"/>
+                            </a>
+                        </div>
+                        <div class="media-content">
+                            <div class="media-content-body">
+                                <a href="javascript:void(0)" class="material-card_content clickeable" data-bind="attr: { href: url}">
+                                    <div class="material-card_title">
+                                        <span data-bind="text: name "></span>
+                                    </div>
+                                    <div class=" item--vehicle-fuel">
+                                        <span class="item--vehicle-title"></span>
+                                        <span data-bind="text: location "></span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                    <div class="clear"></div>
+                </li>
+
+
+            </ul>
+
+        </div>
+    </div>
+
+
+    <div class="socialNet" data-bind="visible:SocialNetworks().length > 0">
+        <h3 data-bind="text:Traducir('FindUsOn')"></h3>
+        <ul data-bind="foreach : SocialNetworks">
+            <li><a data-bind="click :$root.OpenExternalLink.bind(link) ,attr: { class:type} "><i data-bind="attr:{class:'fa fa-'+type +' fa-2x social'}"></i></a></li>
+        </ul>
+    </div>
+</div>
+<script src="ViewModels/Branch.js"></script>

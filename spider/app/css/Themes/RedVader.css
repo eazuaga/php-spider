@@ -1,0 +1,77 @@
+﻿.bar--top {
+background: #BA2234;
+color: white;
+font-size: 1.5em;
+padding: .5em 1em;
+}
+.switch-option__selected {
+background: #BA2234 !important;
+color: #FFF !important;
+}
+.switch-option {
+border: 2px solid #BA2234;
+padding: 0.2em 1.5em;
+/*background:#C19F62;*/
+display: inline-block;
+letter-spacing: normal;
+/*color:#999999;*/
+}
+.owl-theme .owl-controls .owl-page.active span {
+    background: none repeat scroll 0 0 #BA2234;
+}
+.item--vehicle-moreLink {
+    color: #BA2234;
+}
+.field--store-phone {
+background: none repeat scroll 0 0 #C19F62;
+}
+.field--store-mail {
+background: #BA2234;
+margin-left: 2%;
+}
+.staff-name {
+display: block;
+color: #BA2234;
+margin: .5em 0 0;
+font-weight: bolder;
+font-size: 1.15em;
+}
+.fa-share {
+    color:#C19F62;
+}
+/*C19F62*/
+
+.item--vehicle-image {
+border: 1px solid #C19F62;
+}
+
+.field--store-My {
+        background: none repeat scroll 0 0 #C19F62;
+}
+.item--vehicle {
+background-color:#FFF;
+border: 1px solid gray;
+}
+.list {
+    background-color:#DAD1D1;
+}
+#launcher {
+background-image: url('../images/red.png');
+}
+.launcher-text {
+ color:white;
+}
+.launcher{
+color:white;
+background: rgba(250, 247, 247, 0.3);
+border:none;
+}
+#launcher .powered-atl {
+display:none;
+}
+.store--phone-mail-widget a i {
+    color: #607D8B!important;
+}
+.material-card_actions a i {
+    color: #607D8B!important;
+}

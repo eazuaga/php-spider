@@ -1,0 +1,14 @@
+html,
+body {
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    /*font-family: "Myriad", "Lucida Grande","Helvetica Neue","Helvetica","Arial","Verdana","sans-serif";*/
+   /*font-family: "HelveticaNeue", sans-serif;*/
+    background: #EEEEEE;
+    min-height: 100%;
+    position: relative;
+    width: 100%;
+    /*esto en el celu de pablo deja el scroll fixed*/
+    overflow-x: hidden;
+    /*pero si lo saco se rompe el layout cuando hace la animacion*/
+}

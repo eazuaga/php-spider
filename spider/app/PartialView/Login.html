@@ -1,0 +1,35 @@
+<div id="Login">
+    <fieldset class="form-custom">
+        <h3 data-bind="text: Traducir('Login')"></h3>
+        <!--<div class="imageLog">
+            <img src="img/user.png" alt="" class="staff-avatar">
+        </div>-->
+
+        <!--<label for="website">Username:</label>-->
+        <div class="fieldInput input-field">
+            <input type="email" data-bind="value: username" placeholder="Email" name="username" />
+            <i class="fa fa-m-email input-decoration"></i>
+        </div>
+        <!--<br />-->
+        <!--<label for="website">Password:</label>-->
+        <div class="fieldInput input-field">
+            <input type="password" data-bind="value: password" placeholder="Password" name="password" />
+            <i class="fa fa-m-key input-decoration"></i>
+        </div>
+        <div class="fieldInput margintop material-checkbox-container">
+            <input data-bind="checked: remember" type="checkbox" class="material-checkbox" id="cbxRemember" />
+            <label data-bind="text:Traducir('Remember')" for="cbxRemember"></label>
+        </div>
+
+        <a class="btn-default" data-bind="click: Submit,text:Traducir('SignIn') " href="javascript:void(0)">
+
+        </a>
+        <div class="fieldInput margintop material-separator">
+            <h3 data-bind="text: Traducir('NoAccount')"></h3>
+            <a data-bind="text:Traducir('SignUp')" href="#!/Register" class="btn-default-invert"></a>
+        </div>
+
+
+    </fieldset>
+</div>
+<script src="ViewModels/MyAccount/Login.js"></script>

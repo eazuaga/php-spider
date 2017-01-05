@@ -1,0 +1,19 @@
+<div id="Offerts" class="">
+    <div>
+
+        <div class="content">
+            <ul id="lstStores" data-bind="foreach:Messages" class="list">
+                <li class="material-card material-card-more">
+                    <a class="material-card_content" href="" data-bind="attr: { href: link, title: title}">
+                    <b data-bind="text:sender" class="material-card_title"></b>
+                        <div data-bind="text:title" class="item--store-name"></div>
+                        <div data-bind="text:content" class="item--store-content"></div>
+                        <p data-bind="text:content"></p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+<script src="ViewModels/Messages.js"></script>

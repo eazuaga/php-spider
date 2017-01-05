@@ -1,0 +1,38 @@
+<div id="MyData">
+    <div>
+        <fieldset>
+            <form class="left-aligned-form form-custom">
+                <!--<label data-bind="text:Traducir('Name')" ></label>-->
+                <input type="text" data-bind="value: User.name,attr:{placeholder:Traducir('Name')}" />
+                <span class="flag-obligatorio">*</span>
+                <!--<br />-->
+                <!--<label data-bind="text:Traducir('Surname')" ></label>-->
+                <input type="text" data-bind="value: User.surename ,attr:{placeholder:Traducir('Surname')}" />
+                <span class="flag-obligatorio">*</span>
+                <!--<br />-->
+                <!--<label data-bind="text:Traducir('Direccion')" ></label>-->
+                <input id="password" type="text" data-bind="value: User.address, attr: {placeholder: Traducir('Direccion')}" />
+                <span class="flag-obligatorio">*</span>
+                <!--<br />-->
+                <!--<label  for="website">Email:</label>-->
+                <input type="text" data-bind="value:User.email,attr:{placeholder:'Email'}" id="txtEmail" />
+                <span class="flag-obligatorio">*</span>
+                <!--<br />-->
+                <!--<label data-bind="text:Traducir('Telefono')" ></label>-->
+                <input type="text" data-bind="value: User.phone,attr:{placeholder:Traducir('Telefono')}" />
+                <span class="flag-obligatorio">*</span>
+                <!--<br />-->
+                <a data-bind="text:Traducir('Save'),click: Submit " class="btn-default" href="javascript:void(0)">
+
+                </a>
+                <div id="Message" data-bind="visible:popup">
+                    <h3 data-bind="text:Traducir('RecordedData')"></h3>
+                </div>
+            </form>
+        </fieldset>
+
+    </div>
+
+
+</div>
+<script src="ViewModels/MyAccount/MyData.js"></script>

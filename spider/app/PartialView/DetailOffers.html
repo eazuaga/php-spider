@@ -1,0 +1,26 @@
+<div id="DetaislOfferts">
+    <div class="offer-detail material-card">
+        <!--data-bind="attr: {href: Offert.link}"-->
+        <a data-bind="click :$root.OpenExternalLink.bind( Offert.link) " class="material-card_image">
+            <img data-bind="attr : { src: Offert.img}, visible: Offert.img != ''" class="material-card_image" />
+        </a>
+        <div class="material-card_content">
+            <h1 data-bind="text:Offert.title" class="material-card_title"></h1>
+            <p data-bind="text:Offert.content" class="item-content"></p>
+            <p data-bind="text: Traducir('EffectiveThrough') + ' ' + Offert.dateTo, visible: Offert.dateTo != ''"></p>
+        </div>
+        <div class="material-card_actions">
+            <a data-bind="attr:{href:'tel:' + Config.offersContact.phone}" href="javascript:void(0)" class="material-card_action">
+                <i class="fa fa-m-phone fa-3x white"></i>
+            </a>
+            <a data-bind="attr:{href:'mailto:' + Config.offersContact.email}" href="javascript:void(0)" class="material-card_action">
+                <i class="fa fa-m-email fa-3x white"></i>
+            </a>
+            <!--<a data-bind="click: $root.share.bind($data, Offert.title + Offert.content, '', Offert.img, Offert.link)" href="javascript:void(0)" class="material-card_action">
+                <i class="fa fa-m-share fa-3x white"></i>
+            </a>-->
+        </div>
+    </div>
+
+</div>
+<script src="ViewModels/DetailOffers.js"></script>

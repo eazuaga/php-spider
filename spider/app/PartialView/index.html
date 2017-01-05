@@ -1,0 +1,36 @@
+
+<div class="content grid" id="launcher">
+
+</div>
+    <div class="content grid">
+        <a class="grid-cell grc-1-3 launcher powered-atl" href="http://www.autologica.com/clientconnect.html">
+            By <strong>Autologica ClientConnect</strong>
+        </a>
+    </div>
+<script src="js/jquery.tmpl.min.js"></script>
+<script type="text/javascript">
+    var template = function (json, idTml, idDiv, Nametmp) {
+        $(idDiv).empty();
+
+        if (json != null && json.length != 0) {
+            $(idTml).tmpl(json).appendTo(idDiv);
+        }
+    };
+</script>
+<script type="text/html" id="TmplMenu">
+    <a class="${clasea}" href="${href}">
+        <i class="${clasei}"></i>
+        <span class="launcher-text">${texto}</span>
+    </a>
+</script>
+<script>
+    $(document).ready(function () {
+
+    $("#menu").show();
+    if ($(window).width() <= 767) {
+        $("#app").hide();
+    }
+    itemMenu = Config.GetTranslatedMenu();
+    template(itemMenu, "#TmplMenu", "#launcher", "");
+    });
+</script>

@@ -1,0 +1,135 @@
+<div id="Parts">
+    <div class="content">
+        <ul class="list material-tabs">
+            <li class="type-switcher">
+                <span id="0" data-bind="click : tabs.bind($data,0,'starred'),attr: { class: clase0 },text:Traducir('starred')">P</span>
+                <span id="1" data-bind="click : tabs.bind($data,1,'Categories'),attr: { class: clase1 },text:Traducir('Categories')">P</span>
+                <!--<span id="2" data-bind="click:tabs.bind($data,2,'Search'),attr: { class: clase2 },text:Traducir('Search')">Search</span>-->
+            </li>
+        </ul>
+        <div data-bind="visible:enabled" class="searcher">
+            <form id="filter">
+                <fieldset>
+                    <!--,executeOnEnter: search-->
+                    <input id="SearchDescription" data-bind="value:searchDescription ,attr:{placeholder :Traducir('CodeDescription')}" type="search"/>
+                    <input data-bind="value:searchId ,attr:{placeholder :Traducir('ID')} ,visible:false" type="search"/>
+                    <a data-bind="text:Traducir('Search'),click: search " class="field field-store field--store-My btn-default input" href="javascript:void(0)">
+                    </a>
+                    <div data-bind="visible:PartsView">
+                        <h3 data-bind="text :NumberResult"> </h3>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+
+        <div data-bind="visible:CategoryView">
+            <div data-bind="foreach :Group" class="">
+                <a data-bind="attr:{href :'#!/CategoryPartsList/'+name}" class="material-card material-card-more">
+                    <div class="material-card_content">
+                        <span data-bind="text:name" class="material-card_title"></span>
+                    </div>
+                    <!--<i class="fa fa-chevron-right right"></i>-->
+                </a>
+            </div>
+        </div>
+        <!---->
+        <!--id="PartSearcherFixed"-->
+        <!--class="contentMessage PartSearcherFixed"-->
+        <div  data-bind="visible:PartsView" >
+
+            <ul data-bind="foreach: Parts" class="list mypatrs">
+                <li class="material-card material-card-horizontal ">
+                        <div class="material-card_image">
+                            <img data-bind="attr:{src: image}" class="" />
+                        </div>
+                        <div class="material-card_content">
+                            <div class="media-content-body">
+                                <div data-bind="text:name" class="material-card_title"></div>
+                                <div class="innerDetails">
+                                    <div data-bind="visible:$root.visibleField(code)" class="">
+                                        <span class="item--vehicle-title" data-bind="text:Traducir('ID') + ': '"></span>
+                                        <span data-bind="text:code"></span>
+                                    </div>
+                                    <div data-bind="visible: priceVisible" class="">
+                                        <span class="item--vehicle-title" data-bind="text:Traducir('Price') + ': ' "></span>
+                                        <span class="bold" data-bind="text: currency "></span>
+                                        <span data-bind="text: price"></span>
+                                    </div>
+
+                                    <!-- <div data-bind="visible:$root.visibleField(stock)" class="item--vehicle-fuel">
+                                    <span class="item--vehicle-title" data-bind="text:'Stock: '"></span>
+                                    <span data-bind="text:stock"></span>
+                                </div> -->
+                                    <div data-bind="visible:$root.visibleField(origin)" class="">
+                                        <span data-bind="text:Traducir('origin')+ ': '" class="bold"></span>
+                                        <span data-bind="text:origin"></span>
+                                    </div>
+                                    <!--<div data-bind="visible:$root.visibleField(supplier)" class="item--vehicle-fuel">
+                                    <span data-bind="text:Traducir('supplier')+ ': '" class="item--vehicle-title"></span>
+                                    <span data-bind="text:supplier"></span>
+                                </div>-->
+                                    <div class="material-card_edit-inline">
+                                        <label data-bind="text:Traducir('quantity'), visible:Config.User.Logued" class="material-card_edit-inline_label"></label>
+                                        <input data-bind="value:quantity , attr: {id :codeParsed}, click:$root.select.bind($data,codeParsed ),visible:Config.User.Logued" style="width: 45%" class="InputEditKm" type="number" step="1">
+
+                                            <a data-bind="click:$root.buy.bind($data,codeParsed ),visible:Config.User.Logued" class="material-floating-button material-floating-button-default " href="javascript:void(0)">
+                                                <i class="fa fa-cart-plus"></i>
+                                            </a>
+                                    </div>
+                                </div>
+
+
+                                <!--media-actions-->
+                                <div class=" buttonsParts">
+                                    <a class="phonecar " data-bind="attr:{href:'tel:'+Config.partsContact.phone}" href="tel:011-47856985">
+                                        <i class="fa fa-m-phone"></i>
+                                    </a>
+                                    <a data-bind="attr:{href:'mailto:'+Config.partsContact.email}" href="mailto:abc@autologica.com">
+                                        <i class="fa fa-m-email"></i>
+                                    </a>
+                                    <a href="javascript:void(0)" data-bind="visible:visibleShare, click: $root.share.bind($data, supplier + ' ' + name, '', image, link)">
+                                        <i class="fa fa-m-share"></i>
+                                    </a>
+                                    <!--<a data-bind="click:$root.buy.bind($data,id )" href="javascript:void(0)">
+                                    <i class="fa fa-shopping-cart min2"></i>
+                                </a>-->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                </li>
+            </ul>
+        </div>
+        <div data-bind="visible:morebtn " class="line">
+
+        </div>
+        <!--class="centerdiv"-->
+        <div data-bind="visible:morebtn " >
+            <a data-bind="text:Traducir('SeeMore'),click: moreSearch " class="field field-store field--store-My btn-default input" href="javascript:void(0)">
+            </a>
+        </div>
+    </div>
+</div>
+
+<div data-bind="visible: resultMessage() != ''">
+    <p data-bind="text: resultMessage()" style="text-align: center;"></p>
+</div>
+<script src="ViewModels/Parts.js"></script>
+<script>
+    //-----------------------------------------------------
+    //Barra que nos sigue
+    var _tabs = $('.material-tabs');
+    offset = _tabs.offset();
+    var fromtop = offset.top;
+    var _tabsFixed = null;
+    $(window).scroll(function () {
+        var dist = $(this).scrollTop();
+        if (dist > fromtop) {
+            _tabsFixed = _tabs.clone(true, true).addClass('material-tabs-fixed');
+            $('body').append(_tabsFixed);
+        } else {
+            $('.material-tabs-fixed').remove();
+        }
+    });
+</script>
+

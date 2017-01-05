@@ -1,0 +1,29 @@
+<div id="MyCars">
+    <div>
+        <h3 data-bind="text:Traducir('DeleteThis')"> </h3>
+    </div>
+    <fieldset>
+        <form>
+            <label data-bind="text:Traducir('Model')"></label>
+            <label  data-bind="text: MyCar.model" />
+            <br />
+            <label data-bind="text:Traducir('Mileage') + ': '"></label>
+            <label  data-bind="text: MyCar.mileage"  />
+            <br />
+            <label data-bind="text:Traducir('Fuel')"></label>
+            <label  data-bind="text: MyCar.fuel"  />
+            <br />
+            <label data-bind="text:Traducir('Make')" for="website"></label>
+            <label  data-bind="text:MyCar.make"  />
+            <br />
+            <a data-bind="text:Traducir('Delete'),click: Delete " class="field field-store field--store-My input" href="javascript:void(0)">
+
+            </a>
+            <div id="Message" data-bind="visible:popup">
+                <h3 data-bind="text:Traducir('RecordedData')"></h3>
+            </div>
+        </form>
+    </fieldset>
+</div>
+<script src="js/linq.min.js"></script>
+<script src="ViewModels/MyAccount/DeleteMyCars.js"></script>

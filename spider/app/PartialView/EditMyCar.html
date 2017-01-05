@@ -1,0 +1,24 @@
+
+    <div id="MyCars">
+        <fieldset>
+            <form>
+                <!--<label data-bind="text:Traducir('Model')"></label>-->
+                <input requiredfield="true" type="text" data-bind="value: MyCar.model,attr:{placeholder:Traducir('Model')},visible:false" />
+                <!--<label data-bind="text:Traducir('Mileage')"></label>-->
+                <input requiredfield="true" type="text" data-bind="value: MyCar.mileage,attr:{placeholder:Traducir('Mileage')}" name="username" />
+                <!--<label data-bind="text:Traducir('Fuel')"></label>-->
+                <input requiredfield="true" id="password" type="text" data-bind="value: MyCar.fuel,attr:{placeholder:Traducir('Fuel')},visible:false" name="branch" />
+                <!--<label data-bind="text:Traducir('Make')" for="website"></label>-->
+                <input requiredfield="true" type="text" data-bind="value:MyCar.make,attr:{placeholder:Traducir('Make')},visible:false" name="vehicle" />
+                <!--<input requiredfield="true" type="text" data-bind="value:MyCar.licensePlate,attr:{placeholder:Traducir('licensePlate')}" name="vehicle" />-->
+                <a data-bind="text:Traducir('Save'),click: Save " class="field field-store field--store-My input" href="javascript:void(0)">
+                </a>
+                <div id="Message" data-bind="visible:popup">
+                    <h3 data-bind="text:Traducir('RecordedData')"></h3>
+                </div>
+            </form>
+        </fieldset>
+    </div>
+<script src="js/linq.min.js"></script>
+<!--<script src="js/jquery.validate.js"></script>-->
+<script src="ViewModels/MyAccount/EditMyCars.js"></script>

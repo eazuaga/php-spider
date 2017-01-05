@@ -1,0 +1,57 @@
+<div id="register">
+    <div data-bind="visible:disabled">
+        <fieldset class="form-custom">
+            <form class="left-aligned-form">
+                <div class="fieldInput input-field">
+                    <input id="name" type="text" placeholder="name" data-bind="value: customer().name,attr:{placeholder:Traducir('FullName')}" name="Nombre" />
+                    <i class="fa fa-m-person input-decoration"></i>
+                </div>
+                <div class="fieldInput input-field">
+                    <input id="username" type="email" placeholder="Email" data-bind="value: customer().email" name="username" />
+                    <i class="fa fa-m-email input-decoration"></i>
+                </div>
+                <div class="fieldInput input-field">
+                    <input id="password" type="password" placeholder="Password" data-bind="value:customer().password" />
+                    <i class="fa fa-m-key input-decoration"></i>
+                </div>
+                <div class="fieldInput input-field">
+                    <input id="rpass" type="password" data-bind="value: RPassword ,attr:{ placeholder: Traducir('ReplyPassword')}" name="vehicle" />
+                    <i class="fa fa-m-key input-decoration"></i>
+                </div>
+                <!--<p class="text-center material-text" data-bind="text: AsVisitorText"></p>
+                <p class="text-center material-text">
+                    <a data-bind="text:Traducir('SeeTerms')" href="#!/Terms"></a>
+                </p>-->
+
+                <!--<div class="fieldInput margintop material-checkbox-container">
+                    <input type="checkbox" class="material-checkbox" id="cbxTerms" />
+                    <label for="cbxTerms">
+                        <span data-bind="text: AsVisitorText "></span>
+                        <a data-bind="text:Traducir('SeeTerms')" href="#!/Terms" class="material-link"></a>
+                    </label>
+                </div>-->
+
+
+                <a data-bind="click: Submit,text:Traducir('CreateAccount') " class="btn-default" href="javascript:void(0)"></a>
+                <div class="material-separator">
+                    <a href="javascript:void(0)" data-bind="click: openMenu ,text:Traducir('RegisterLater')" class="btn-default-invert"></a>
+                </div>
+                <p class="text-center material-text">
+                    <span data-bind="text: AsVisitorText"></span>
+                    <a data-bind="text:Traducir('SeeTerms')" href="#!/Terms"></a>
+                </p>
+            </form>
+
+        </fieldset>
+
+    </div>
+
+
+  <!--  <div data-bind ="visible:enabled">
+        <p data-bind="text:Traducir('YouMust')"></p>
+        <a data-bind="text:Traducir('GetStarted')" href=""></a>
+    </div>-->
+</div>
+<script src="ViewModels/Register.js"></script>
+<!--<script src="js/jquery.validate.js"></script>-->
+

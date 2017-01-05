@@ -1,0 +1,29 @@
+<div id="MyData">
+    <div id="MyCars">
+        <fieldset>
+            <form class="left-aligned-form form-custom">
+               <select id="ddlMakes" data-bind="options: Makes, value: SelectedMake, optionsText: 'name', optionsCaption: Traducir('SelectMake')"></select>
+               <span class="flag-obligatorio">*</span>
+
+               <select id="ddlModels" data-bind="options: Models, value: SelectedModel, optionsText: 'name', optionsCaption: Traducir('SelectModel'), enable : Models"></select>
+               <span class="flag-obligatorio">*</span>
+
+               <select id="ddlYears" data-bind="options: Years, value: SelectedYear, optionsText: 'name', optionsCaption: Traducir('SelectYearModel'), enable : Years"></select>
+               <span class="flag-obligatorio">*</span>
+
+               <select id="ddlYears" data-bind="options: Fuel, value: SelectedFuel, optionsText: 'name', optionsCaption: Traducir('SelectFuel')"></select>
+
+               <input data-bind="value: Mileage, attr: { placeholder: LabelMileage }" type="number" id="ddlMileage" />
+               <span class="flag-obligatorio">*</span>
+
+               <a data-bind="text:Traducir('Save'),click: Save " class="btn-default" href="javascript:void(0)"></a>
+
+                <div id="Message" data-bind="visible:popup">
+                    <h3 data-bind="text:Traducir('RecordedData')"></h3>
+                </div>
+            </form>
+        </fieldset>
+    </div>
+</div>
+<!--<script src="js/jquery.validate.js"></script>-->
+<script src="ViewModels/MyAccount/InsertMyCar.js"></script>

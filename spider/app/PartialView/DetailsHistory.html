@@ -1,0 +1,55 @@
+<div data-bind="visible:vehicleHistoryVisible" id="VehicleHistory">
+  <div class="work-order-detail-container">
+    <div class="work-order-header">
+        <h2 data-bind="text: CurrentHistory().date" class="h-center"></h2>
+        <h3 data-bind="text: Traducir('Store') + ': '+ CurrentHistory().store" class="h-center"></h3>
+        <p data-bind="text: CurrentHistory().description" class="h-center"></p>
+    </div>
+    <ul data-bind="foreach: CurrentHistory().services">
+        <li>
+            <h4 data-bind="text:description"></h4>
+            <p data-bind="visible:jobs.length >0 , text :Traducir('jobs')"></p>
+            <table data-bind="visible:jobs.length >0" class="data-table">
+                <thead class="cf">
+                    <tr>
+                        <th data-bind="text:Traducir('Description')"></th>
+                        <th data-bind="text:Traducir('chargeTo')"></th>
+                        <!--<th data-bind="text:Traducir('unit')"></th>-->
+                    </tr>
+                </thead>
+                <tbody data-bind="foreach: jobs">
+                    <tr>
+                        <td data-bind="text:description"></td>
+                        <td data-bind="text:chargeTo"></td>
+                        <!--<td data-bind="text:unit"></td>-->
+                    </tr>
+                </tbody>
+            </table>
+            <p data-bind="visible:parts.length >0 ,text:Traducir('Parts')"></p>
+            <table data-bind="visible:parts.length >0" class="data-table">
+                <thead class="cf">
+                    <tr>
+                        <th data-bind="text:Traducir('Code')"></th>
+                        <th data-bind="text:Traducir('Description')"></th>
+                        <th data-bind="text:Traducir('unit')" class="numeric-cell"></th>
+                        <th data-bind="text:Traducir('price')" class="numeric-cell"></th>
+                        <th data-bind="text:Traducir('chargeTo')"></th>
+                        <!--<th data-bind="text:Traducir('supplier') "></th>-->
+                    </tr>
+                </thead>
+                <tbody data-bind="foreach: parts">
+                    <tr>
+                        <th data-bind="text:code"></th>
+                        <th data-bind="text:name"></th>
+                        <th data-bind="text:quantity" class="numeric-cell"></th>
+                        <th data-bind="text:price" class="numeric-cell"></th>
+                        <th data-bind="text:chargeTo"></th>
+                        <!--<th data-bind="text:supplier "></th>-->
+                    </tr>
+                </tbody>
+            </table>
+        </li>
+    </ul>
+  </div>
+</div>
+<script src="ViewModels/MyAccount/DetailsVehicleHistory.js"></script>

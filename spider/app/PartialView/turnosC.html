@@ -1,0 +1,66 @@
+       <div id="turnos" class="">
+           <link href="css/jquery-ui.min.css" rel="stylesheet" />
+           <script src="js/jquery-ui.min.js"></script>
+           <div id="contentApoint" class="content">
+
+           </div>
+
+           <div id="formApoint">
+               <fieldset>
+                   <form>
+                       <div>
+                           <label data-bind="text:Traducir('Name')" ></label>
+                           <input id="name" type="text" requiredfield='true' data-bind="value: Apoint.user.name" name="username" />
+                       </div>
+                       <br />
+                       <div>
+                           <label data-bind="text:Traducir('Surname')" for="website"> </label>
+                           <input type="text" requiredfield='true' data-bind="value: Apoint.user.surname" name="username" />
+                        </div>
+                       <br />
+                       <div>
+                           <label >Email:</label><input type="text" requiredfield='true' emailvalid="true" data-bind="value: Apoint.user.email" name="username" />
+                       </div>
+                       <br />
+                       <label data-bind="text:Traducir('Stores')" ></label>
+                       <select data-bind="options: branchs, value:Selected, optionsText: 'name'">
+                       </select>
+                       <br />
+                       <div>
+                           <label data-bind="text:Traducir('Car')" > </label>
+                           <input type="text" requiredfield='true' data-bind="value: Apoint.vehicle" name="vehicle" />
+                       </div>
+                       <br />
+                       <label data-bind="text:Traducir('Date')" ></label>
+                       <input type="button" data-bind="value: date" class="date-input-css" />
+                       <label data-bind="text:date"></label>
+                       <!--<input type="hidden" data-bind="value: date" name="date" />-->
+                       <br />
+                       <label data-bind="text:Traducir('Brand')" ></label>
+                       <input type="text" requiredfield='true' data-bind="value: Apoint.brand" name="date" />
+                       <br />
+                       <label data-bind="text:Traducir('Model')" ></label>
+                       <input type="text" requiredfield='true' data-bind="value: Apoint.model" name="date" />
+                       <br />
+                       <label data-bind="text:Traducir('Patent')" ></label>
+                       <input type="text" requiredfield='true' data-bind="value: Apoint.patent" name="date" />
+                       <br />
+                       <label data-bind="text:Traducir('Year')" ></label>
+                       <input type="text" requiredfield='true' data-bind="value: Apoint.year" name="date" />
+                       <br />
+                       <label data-bind="text:Traducir('ServiceRequired')" for="website"></label>
+                       <textarea class="textarea" data-bind="value: Apoint.servicioRequerido"></textarea>
+                       <a data-bind="click: Submit,text:Traducir('Send') " class="field field-store field--store-My input" href="javascript:void(0)">
+
+                       </a>
+                   </form>
+               </fieldset>
+           </div>
+       </div>
+<!--<script src="js/jquery.validate.js"></script>-->
+<script src="ViewModels/Apoint.js"></script>
+<script>
+    $(function () {
+        $(".date-input-css").datepicker();
+    })
+</script>

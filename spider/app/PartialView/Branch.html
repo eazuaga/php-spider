@@ -1,0 +1,23 @@
+﻿       <div id="branch" data-role="page" style="height:100%" class="">
+           <div style="height:100%" id="people">
+               <div class="content">
+                   <ul id="lstStores" data-bind="foreach:Branchs" class="list">
+                       <li class="item Branch item--store ">
+                           <a class="clickeable" data-bind="attr: { href: url}">
+                               <div data-bind="text:name" class="item--store-name"></div>
+                               <div data-bind="text:location" class="item--store-content"></div>
+                           </a>
+                       </li>
+                   </ul>
+               </div>
+           </div>
+
+           <!--data-bind=" attr: { href: link}"-->
+           <div class="socialNet">
+               <h3 class="AlingCenter" data-bind="text:Traducir('FindUsOn')"></h3>
+               <ul data-bind="foreach : SocialNetworks">
+                   <li><a data-bind="click :$root.OpenExternalLink.bind( link) "><i data-bind="attr:{class:'fa fa-'+type +' fa-2x social'}"></i></a></li>
+               </ul>
+           </div>
+</div>
+<script src="ViewModels/Branch.js"></script>

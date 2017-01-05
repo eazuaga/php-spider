@@ -1,0 +1,70 @@
+<div data-bind="visible: ListCarts().length > 0 " id="Cart">
+
+    <div>
+        <ul data-bind="foreach: ListCarts" class="list mypatrs">
+            <li class="item item--vehicle item-parts ">
+                <article class="media _item--vehicle-content">
+                    <div class="IconClose">
+                        <a class="closeButon" data-bind="click: $root.removeCart"><i class="fa fa-close "></i></a>
+                    </div>
+                    <div class="media-item">
+                        <img data-bind="attr:{src: image}" class="_item--vehicle-image " />
+                    </div>
+                    <div class="media-content _item--vehicle-details ">
+                        <div class="media-content-body">
+                            <div data-bind="text:name" class="item--vehicle-title titleCart"></div>
+                            <div class="innerDetails">
+                                <div class="item--vehicle-kms">
+                                    <span class="item--vehicle-title" data-bind="text:Traducir('ID') + ': '"></span>
+                                    <span data-bind="text:code"></span>
+                                </div>
+                                <div class="item--vehicle-price">
+                                    <span class="item--vehicle-title" data-bind="text:Traducir('Price') + ': ' "></span>
+                                    <span class="bold" data-bind="text:Config.Currency "></span>
+                                    <span data-bind="text:price"></span>
+                                </div>
+                               <!-- <div class="item--vehicle-fuel">
+                                    <span class="item--vehicle-title" data-bind="text:'Stock: '"></span>
+                                    <span data-bind="text:stock"></span>
+                                </div> -->
+                                <div class="item--vehicle-fuel">
+                                    <span data-bind="text:Traducir('origin')+ ': '" class="item--vehicle-title"></span>
+                                    <span data-bind="text:origin"></span>
+                                </div>
+                                <!--<div class="item--vehicle-fuel">
+                                    <span data-bind="text:Traducir('supplier')+ ': '" class="item--vehicle-title"></span>
+                                    <span data-bind="text:supplier"></span>
+                                </div>-->
+                                <div class="item--vehicle-fuel">
+                                    <span data-bind="text:Traducir('quantity')+ ': '" class="item--vehicle-title"></span>
+                                    <input data-bind="value:quantity , attr: {id :codeParsed} , event: { change: $parent.Change.bind($data, quantity) }, click:$root.select.bind($data,codeParsed )" style="width: 18%" class="InputEditKm" type="number" step="1">
+                                </div>
+                                <div class="item--vehicle-fuel">
+                                    <span data-bind="text:('Subtotal')+ ': '" class="item--vehicle-title"></span>
+                                    <span class="bold" data-bind="text:Config.Currency "></span>
+                                    <span data-bind="text:subtotal , attr: {id :'subtotal_'+id}"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </article>
+            </li>
+        </ul>
+    </div>
+
+    <div class="saldo TotalRight">
+        <span data-bind="text: 'Total: ' + Config.Currency.toUpperCase() + ' ' + totalSurcharge() "> </span>
+        <br />
+        <!--<input data-bind="click:send , value : 'Send'" class=" input loginbtn btn-default" type="button">-->
+
+    </div>
+    <fieldset>
+        <a class="field field-store field--store-My input loginbtn btn-default" data-bind="click: send,text:Traducir('Send') " href="javascript:void(0)">Enviar</a>
+    </fieldset>
+
+</div>
+<div data-bind="visible: ListCarts().length == 0">
+        <p data-bind="text:Traducir('OderNotAvaiable')" style="text-align: center;"></p>
+    </div>
+<script src="ViewModels/MyAccount/Cart.js"></script>

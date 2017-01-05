@@ -1,0 +1,49 @@
+﻿<script src="../js/jquery.min.js"></script>
+<link href="../owl-carousel/owl.carousel.new.css" rel="stylesheet" />
+
+
+
+<script src="../owl-carousel/owl.carousel.min.new.js"></script>
+<div id="content">
+
+    <div class="owl-carousel">
+        <div class="item-video" data-merge="3"><a class="owl-video" href="http://vimeo.com/23924346"></a></div>
+        <div class="item-video" data-merge="1"><a class="owl-video" href="https://www.youtube.com/watch?v=JpxsRwnRwCQ">as</a></div>
+        <div class="item-video" data-merge="2"><a class="owl-video" href="http://www.youtube.com/watch?v=FBu_jxT1PkA">s</a></div>
+        <div class="item-video" data-merge="1"><a class="owl-video" href="http://www.youtube.com/watch?v=oy18DJwy5lI">s</a></div>
+        <div class="item-video" data-merge="2"><a class="owl-video" href="http://www.youtube.com/watch?v=H3jLkJrhHKQ">s</a></div>
+        <div class="item-video" data-merge="3"><a class="owl-video" href="https://www.youtube.com/watch?v=g3J4VxWIM6s">s</a></div>
+        <div class="item-video" data-merge="1"><a class="owl-video" href="http://www.youtube.com/watch?v=0fhoIate4qI">f</a></div>
+        <div class="item-video" data-merge="2"><a class="owl-video" href="https://www.youtube.com/watch?v=EF_kj2ojZaE">s</a></div>
+    </div>
+
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        console.log($('.owl-carousel'));
+        console.log($.owlCarousel);
+        setTimeout(function () {
+            $('.owl-carousel').owlCarousel({
+                items: 1,
+                merge: true,
+                loop: true,
+                margin: 10,
+                video: true,
+                lazyLoad: true,
+                center: true,
+                responsive: {
+                    480: {
+                        items: 2
+                    },
+                    600: {
+                        items: 4
+                    }
+                }
+            });
+        },2000);
+        
+
+    });
+
+</script>

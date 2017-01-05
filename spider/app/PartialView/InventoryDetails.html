@@ -1,0 +1,158 @@
+
+<div id="inventoryDetails" >
+    <div data-bind="foreach: {data:  images, as: 'item'}" class="slider">
+        <div>
+            <div data-bind="visible: IsVideo(type)">
+                <i data-bind="click: $root.SeeVideo.bind($data,item.type,item.embed)" class="fa fa-play-circle-o play"></i>
+            </div>
+            <img data-bind="attr:{src: item.path,class:'view-image '+ type }" class="view-image  " />
+        </div>
+    </div>
+    <div class="content">
+        <div id="viewVehicle" class="view view--vehicle show">
+             <!--img slider-->
+            <div class='embed-container' id="video">
+                <div>
+                    <i data-bind="click: CloseVideo" class="fa fa-times-circle close"></i>
+                </div>
+                <div id="player"></div>
+
+            </div>
+
+            <div class="view-content view--vehicle-content">
+
+                <div class="store--phone-mail">
+                    <a data-bind="attr:{href:'tel:'+Config.usedContact.phone}" href="tel:011-47856985" class="field field-store field--store-phone btn-default">
+                        <span class="field-content store-phone btn-default">(0341) 485 8320</span>
+                        <i class="fa fa-phone fa-3x white"></i>
+                    </a>
+
+                    <a data-bind="attr:{href:'mailto:'+Config.usedContact.email}" class="field field-store field--store-mail btn-default" href="mailto:gmp.mayorista@grupomansilla.com.ar">
+                        <span class="field-content store-mail"></span>
+                        <i class="fa fa-envelope fa-3x white"></i>
+                    </a>
+                    <a class="field field-store field--store-mail btn-default" data-bind="click: $root.share.bind($data, Vehiculo().make + ' ' + Vehiculo().model + ' ' + Vehiculo().year + (Vehiculo().priceVisible ? (' - ' + Vehiculo().price) : ''), '' , $root.images()[0],Vehiculo().url)" href="javascript:void(0)">
+                        <span class="field-content store-mail"></span>
+                        <i class="fa fa-share-alt fa-3x white"></i>
+                    </a>
+                </div>
+                <!--corte -->
+                <!--<div data-bind="text:Traducir('Vehicleinformation')" class="view-content-title view--vehicle-content-title"></div>-->
+                <div data-bind="text:$root.LabelInformation" class="view-content-title view--vehicle-content-title"></div>
+                <div class="contentVehicleDetails">
+                    <!--<div>
+                            <div class="material-floating-widget">
+                                <a class="material-floating-button  material-floating-button-mini" data-bind="attr:{href:'tel:'+Config.usedContact.phone},visible:visibleWidgets()" href="tel:+54 341 4467000">
+                                    <i class="fa fa-m-phone"></i>
+                                </a>
+                                <a  class="material-floating-button material-floating-button-mini" data-bind="attr:{href:'mailto:'+Config.usedContact.email},visible:visibleWidgets()">
+                                    <i class="fa fa-m-email"></i>
+                                </a>
+                                <a href="javascript:void(0)" class="material-floating-button  material-floating-button-default" data-bind="click: $root.hideall.bind(),visible:visibleWidgets()">
+                                    <i class="fa fa-m-close"></i>
+                                </a>
+                                <a href="javascript:void(0)" class="material-floating-button material-floating-button-default" data-bind="click: $root.showall.bind(),visible:visibleMore()">
+                                    <i class="fa fa-m-add "></i>
+                                </a>
+                            </div>
+                    </div>-->
+                    <div class="field" data-bind="visible:visibleField(Vehiculo().make)">
+                        <span data-bind="text:Traducir('Make') +': '" class="field-label"> </span>
+                        <span data-bind="text: Vehiculo().make" class="field-content"></span>
+                    </div>
+                    <div class="field" data-bind="visible:visibleField(Vehiculo().model)">
+                        <span data-bind="text:Traducir('Model') +': '" class="field-label"> </span>
+                        <span data-bind="text: Vehiculo().model" class="field-content"></span>
+                    </div>
+                    <div class="field" data-bind="visible:visibleField(Vehiculo().year)">
+                        <span data-bind="text:Traducir('Year') +': '" class="field-label"> </span>
+                        <span data-bind="text: Vehiculo().year" class="field-content"></span>
+                    </div>
+                    <div data-bind="visible: Vehiculo().priceVisible" class="field field--price">
+                        <span data-bind="text:Traducir('Price') + ': '" class="field-label"> </span>
+                        <span class="bold" data-bind="text: Vehiculo().currency "></span>
+                        <span data-bind="text: Vehiculo().price " class="field-content field-content--price"> </span>
+
+                    </div>
+                    <div data-bind="visible:visibleField(Vehiculo().mileage)" class="field field--milage" style="display: none;">
+                        <span data-bind="text:Traducir('Mileage') +': '" class="field-label"> </span>
+                        <span data-bind="text: Vehiculo().mileage" class="field-content field-content--milage"></span>
+                    </div>
+                    <div data-bind="visible:visibleField(Vehiculo().fuel)" class="field field--fuel">
+                        <span data-bind="text:Traducir('Fuel') +': '" class="field-label"> </span>
+                        <span data-bind="text: Traducir(Vehiculo().fuel)" class="field-content field-content--fuel"></span>
+                    </div>
+                    <div data-bind="visible:visibleField(Vehiculo().traction)" class="field field--transmission">
+                        <span data-bind="text:Traducir('traction') +': '" class="field-label"> </span>
+                        <span data-bind="text: Vehiculo().traction" class="field-content field-content--transmission"></span>
+                    </div>
+                    <div data-bind="visible:visibleField(Vehiculo().color)" class="field field--color">
+                        <span data-bind="text:Traducir('Color') +': '" class="field-label"> </span>
+                        <span data-bind="text: Vehiculo().color" class="field-content field-content--color"></span>
+                    </div>
+                    <div data-bind="visible:visibleField(Vehiculo().optionals)" class="field field--optionals">
+                        <span data-bind="text:Traducir('comments') +': '" class="field-label"> </span>
+                        <span data-bind="text: Vehiculo().optionals" class="field-content field-content--optionals"></span>
+                    </div>
+                    <!--ahora-->
+                    <div class="field field--upholstery" data-bind="visible:visibleField(Vehiculo().description)">
+                        <span data-bind="text:Traducir('Description') +': '" class="field-label"> </span>
+                        <span data-bind="text: Vehiculo().description" class="field-content "></span>
+                    </div>
+                    <div class="field field--upholstery" data-bind="visible:visibleField(Vehiculo().displacement)">
+                        <span data-bind="text:Traducir('displacement') +': '" class="field-label"> </span>
+                        <span data-bind="text: Vehiculo().displacement" class="field-content "></span>
+                    </div>
+                    <div class="field field--upholstery" data-bind="visible:visibleField(Vehiculo().height)">
+                        <span data-bind="text:Traducir('height') +': '" class="field-label"> </span>
+                        <span data-bind="text: Vehiculo().height" class="field-content "></span>
+                    </div>
+                    <div class="field field--upholstery" data-bind="visible:visibleField(Vehiculo().long)">
+                        <span data-bind="text:Traducir('long') +': '" class="field-label"> </span>
+                        <span data-bind="text: Vehiculo().long" class="field-content "></span>
+                    </div>
+
+                    <div class="field field--upholstery" data-bind="visible:visibleField(Vehiculo().power)">
+                        <span data-bind="text:Traducir('power') +': '" class="field-label"> </span>
+                        <span data-bind="text: Vehiculo().power" class="field-content "></span>
+                    </div>
+                    <div class="field field--upholstery" data-bind="visible:visibleField(Vehiculo().trunk)">
+                        <span data-bind="text:Traducir('trunk') +': '" class="field-label"> </span>
+                        <span data-bind="text: Vehiculo().trunk" class="field-content "></span>
+                    </div>
+                    <div class="field field--upholstery" data-bind="visible:visibleField(Vehiculo().weight)">
+                        <span data-bind="text:Traducir('weight') +': '" class="field-label"> </span>
+                        <span data-bind="text: Vehiculo().weight" class="field-content "></span>
+                    </div>
+                    <div class="field field--upholstery">
+                        <p data-bind="text:Traducir('attached')" class="field-label"></p>
+                        <span data-bind="foreach: {data:  Vehiculo().attachments, as: 'item'}">
+                            <!-- text :Traducir('attached'), <span data-bind="text: 'Atach: '" class="field-label"> </span>-->
+                            <a class="field-content attachment-link">
+                                <i data-bind="click :$root.OpenExternalLink.bind( item) " class="fa fa-file-pdf-o fa-3x"></i>
+                            </a>
+                        </span>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="material-floating-widget">
+    <a class="material-floating-button  material-floating-button-mini" data-bind="attr:{href:'tel:'+Config.usedContact.phone},visible:visibleWidgets()" href="tel:+54 341 4467000">
+        <i class="fa fa-m-phone"></i>
+    </a>
+    <a  class="material-floating-button material-floating-button-mini" data-bind="attr:{href:'mailto:'+Config.usedContact.email},visible:visibleWidgets()">
+        <i class="fa fa-m-email"></i>
+    </a>
+    <a href="javascript:void(0)" class="material-floating-button  material-floating-button-default" data-bind="click: $root.hideall.bind(),visible:visibleWidgets()">
+        <i class="fa fa-m-close"></i>
+    </a>
+    <a href="javascript:void(0)" class="material-floating-button material-floating-button-default" data-bind="click: $root.showall.bind(),visible:visibleMore()">
+        <i class="fa fa-m-add "></i>
+    </a>
+</div>
+<script src="ViewModels/InventoryDetails.js"></script>

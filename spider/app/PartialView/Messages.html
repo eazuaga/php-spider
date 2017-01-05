@@ -1,0 +1,22 @@
+<div id="Messages" class="">
+    <div>
+        <div class="content">
+            <div id="lstStores" data-bind="foreach: { data: Messages, as: 'message' }" class="content grid myacc item--store List">
+                <a href="javascript:void(0)" class="material-card material-card-more" data-bind="attr:{ href: '#!/Conversation/'+ message.id }">
+                    <div class="material-card_content">
+                        <b class="material-card_title" data-bind="text: shorContent"></b>
+                        <div data-bind="text: message.sender" class="item--store-content"></div>
+                        <div class="message_sendDatetimeFrom">
+                            <i data-bind="text: message.sendDatetimeFromNow" class="timesent"></i><!-- data-bind="text:Traducir('sent') + ': ' + message.sendDatetimeFromNow" -->
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div data-bind="visible: resultMessage() != ''">
+        <p data-bind="text: resultMessage()" style="text-align: center;"></p>
+    </div>
+</div>
+<script src="js/moment.min.js"></script>
+<script src="ViewModels/Messages.js"></script>

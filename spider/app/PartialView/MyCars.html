@@ -1,0 +1,45 @@
+<div id="MyCars">
+
+
+
+    <ul data-bind="foreach: Cars" class="">
+        <li class="" style="display: list-item;">
+
+            <article class="material-card">
+                <div class="material-card_header clearfix">
+                    <span data-bind="text: model+ ' ' + year" class="material-card_title"></span>
+                    <div class="material-card_close">
+                        <a class="closeButon fa fa-m-close" data-bind="click: $root.Delete.bind($data,id)"></a>
+                    </div>
+                </div>
+                <div class="material-card_content">
+                    <div class="item--vehicle-licensePlate"> <!-- data-bind="visible:$root.visibleField(licensePlate)" -->
+                        <span class="item--vehicle-licensePlate-content" data-bind="text: licensePlate "></span>
+                    </div>
+                    <div class="material-card_edit-inline">
+                        <!--<span class="editKm" data-bind="text:mileage , visible:visibleEditcar()"></span>-->
+
+                        <input style="display: inline-block" data-bind="value: mileage, disable: visibleEditcar()" class="InputEditKm" type="text"/>
+
+                        <span data-bind="text: Config.mileageUnit" class="material-card_edit-inline_label"></span>
+                        <a data-bind="click: $root.DisplaySaveButton.bind($data), visible: visibleEditcar()" class="material-floating-button fa fa-m-edit" href="javascript:void(0)"></a>
+                        <a class="material-floating-button material-floating-button-default fa fa-m-done" href="javascript:void(0)" data-bind="click: $root.Save.bind($data,id), visible: visibleSaveCar()"></a>
+
+                    </div>
+                </div>
+                <div class="material-card_footer material-card_actions">
+                    <a class="clickeable material-card_action" data-bind="attr:{ href: '#!/VehicleHistory/'+ id+'/'+ model + '/'+ year +'/'+ mileage +'/'+make }, text: Traducir('ServiceHistory')"></a>
+                </div>
+
+                <div class="clear"></div>
+            </article>
+        </li>
+    </ul>
+    <div class="material-container">
+        <a class="field field-store field--store-My input btn-default" data-bind="attr:{href:'#!/InsertMyCar'},text:Traducir('add')"></a>
+    </div>
+</div>
+<div data-bind="visible: MessageVisible()">
+    <p data-bind="text:Traducir('UnitsnotAvailable')" style="text-align: center;"></p>
+</div>
+<script src="ViewModels/MyAccount/MyCars.js"></script>

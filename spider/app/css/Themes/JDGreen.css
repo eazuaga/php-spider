@@ -1,0 +1,173 @@
+body {
+    color: #727272;
+}
+.bar--top {
+    /*background: #BA2234;*/
+    background: #1A6E28; /*primary color    */
+    /*color: #FFF;*/
+    /*border-bottom: 1px solid #BA2234;*/
+    /*border-bottom: 1px solid #1A6E28 ;*/
+}
+.icon-launcher {
+    color: #1A6E28 ;/*dark primary color - s solo uso*/
+}
+#iconMenu {
+    color: #FFF;
+}
+.switch-option__selected {
+    /*background: #C19F62;*/
+    background: #1A6E28; /*primary color    */
+    border-bottom: 2px solid #Ffffff;
+    color: white;
+}
+.switch-option {
+    /*border: 2px solid #C19F62;*/
+    /*border: 2px solid #1A6E28;*/
+}
+.btn-default {
+    /*background: #C19F62!important;*/
+    background: #FAD602!important;
+    color: #FFFFFF!important;
+}
+.btn-default a {
+    color: #FFFFFF!important;
+}
+.btn-default i {
+    color: #FFFFFF!important;
+}
+.btn-default-invert {
+    color: #FAD602!important;
+    background: transparent!important;
+    border: 1px solid #FAD602;
+}
+.btn-default-invert a,
+.btn-default-invert i {
+    color: #FFFFFF!important;
+}
+.editcar i {
+    color: #FFF!important;
+}
+.staff-name {
+    /*color: #BA2234;*/
+}
+textarea:focus,
+select:focus,
+input:focus   {
+    border-bottom: 2px solid #1A6E28;/*primary color    */
+}
+.ui-datepicker .ui-widget-header {
+    background: #1A6E28;/*primary color    */
+    color: white;
+}
+.ui-datepicker td .ui-state-highlight,
+.ui-datepicker td .ui-widget-content
+.ui-datepicker td .ui-state-highlight,
+.ui-datepicker td .ui-widget-header
+.ui-datepicker td .ui-state-highlight {
+    background: #FAD602!important;
+}
+.buttonsParts a {
+    color: #FAD602;
+}
+.ui-datepicker .ui-datepicker-current,
+.ui-datepicker .ui-datepicker-close {
+    color: #FAD602!important;
+}
+.material-checkbox:checked + label:before {
+    background: #1A6E28;/*primary color    */
+}
+
+/* hover style just for information */
+.material-checkbox + label:hover:before {
+  border: 1px solid #1A6E28!important;/*primary color    */
+}
+.material-card .material-card_content {
+    color: #727272;
+}
+.material-card .material-card_title {
+    color: #212121;/*primary text*/
+}
+.material-card .material-card_action i {
+    color: #FAD602;
+}
+.material-floating-button {
+    background-color: white;
+    color: #727272;
+}
+.material-floating-button-default {
+    color: white!important;
+    background: #FAD602!important;
+}
+.owl-theme .owl-controls .owl-page.active span,
+.starred,
+.acounts,
+.noUi-connect,
+.IconButton {
+    background: none repeat scroll 0 0 #FAD602;
+}
+.buttonsCars a ,.buttonsCars .phonecar ,.addCart {
+    background: none repeat scroll 0 0 #FAD602;
+}
+.notification-unread {
+    color: #BA2234;
+}
+.item--vehicle-title {
+    color: #727272;
+}
+.item--vehicle-price .item--vehicle-title {
+     color: #b6b6b6;
+}
+.type-switcher {
+    background: #1A6E28;/*primary color    */
+    color: #C8E6C9;/*light primari color/*/
+}
+.view-content-title {
+    color: #212121;/*primary text*/
+    font-weight: bold;
+}
+.field {
+    color: #727272;
+    font-weight: bold;
+}
+.toggle .noUi-base {
+    background: #C8E6C9;
+}
+.toggle .noUi-handle {
+    background: #1A6E28;
+    box-shadow: inset 0 0 1px #C8E6C9, inset 0 1px 3px #C8E6C9, 0 3px 6px -3px #666;
+}
+
+.owl-theme .owl-controls {
+  /* margin-top: 10px; */
+  text-align: center;
+  position: absolute;
+  z-index: 999;
+  /* top: 378px; */
+  bottom: 2px;
+  left: 45%;
+
+}
+.launcher-text {
+       color: #212121; /*primary text*/
+}
+.staff-content a .fa {
+  color: #727272; /*secondary text*/
+}
+.owl-theme .owl-controls .owl-page.active span,
+.noUi-connect
+ {
+    background: none repeat scroll 0 0 #C8E6C9; /*light primari color/*/
+}
+.buttonsParts a.prymaryAction {
+    background: none repeat scroll 0 0 #FAD602; /*acents color*/
+    color: white;
+}
+.textIcons {
+    color: white; /*textIcons*/
+}
+.store--phone-mail-widget a i {
+    color: #607D8B!important;
+}
+.material-card_actions a i {
+    color: #607D8B!important;
+}

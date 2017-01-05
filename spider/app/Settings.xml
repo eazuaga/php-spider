@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.phonegap.dealerApp" version="0.9.1" value="3.6.3"
+    xmlns="http://www.w3.org/ns/widgets"
+    xmlns:gap="http://phonegap.com/ns/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+ <username>polivarez@belizediesel.com</username>
+	<password>bd101</password>
+    <description>
+        DealearApp App
+    </description>
+ 
+</widget>

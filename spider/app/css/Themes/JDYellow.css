@@ -1,0 +1,57 @@
+.damerosolid .grid-cell .launcher-text,
+.damerosolid .grid-cell .fa,
+#launcher.damerosolid .powered-atl {
+    color: #1A6E28;
+}
+/*Common to all template*/
+.bar--top {
+    background: #FAD602;/*fcc600*/
+    color: #737373;
+    border-bottom: 1px solid #FAD602;
+}
+#iconMenu {
+    color: #737373;
+}
+.switch-option__selected {
+    background: #1A6E28;
+}
+.switch-option {
+    border: 2px solid #1A6E28;
+}
+.btn-default {
+    background: #1A6E28!important;
+    color: #FFFFFF!important;
+}
+.btn-default a {
+    color: #FFFFFF!important;
+}
+.btn-default i {
+    color: #FFFFFF!important;
+}
+.editcar i {
+    color: #FFF!important;
+}
+.staff-name {
+    color: #FAD602;
+}
+.owl-theme .owl-controls .owl-page.active span,
+.starred,
+.acounts,
+.noUi-connect,
+.IconButton {
+    background: none repeat scroll 0 0 #1A6E28; 
+}
+.buttonsCars a ,.buttonsParts a ,.buttonsCars .phonecar ,.addCart {
+    background: none repeat scroll 0 0 #1A6E28;
+}
+
+.notification-unread {
+    color: #FAD602;
+}
+.store--phone-mail-widget a i {
+    color: #607D8B!important;
+}
+.material-card_actions a i {
+    color: #607D8B!important;
+}
+

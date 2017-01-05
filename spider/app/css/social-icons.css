@@ -1,0 +1,417 @@
+/* Social Links
+=================================================================== */
+
+[class^="social-"],
+[class*="social-"] {
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	*margin-right: .3em;
+	line-height: 40px;
+	vertical-align: text-top;
+	background-image: url("../img/icons/social-icons-set.png");
+	background-position: 40px 40px;
+	background-repeat: no-repeat;
+	-webkit-transition: all 0.1s ease-in-out;
+	-moz-transition: all 0.1s ease-in-out;
+	-o-transition: all 0.1s ease-in-out;
+	-ms-transition: all 0.1s ease-in-out;
+	transition: all 0.1s ease-in-out;
+}
+
+/* Retina Display Hack */
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+	
+	[class^="social-"],
+	[class*="social-"] {
+		display: inline-block;
+		width: 40px;
+		height: 40px;
+		line-height: 40px;
+		vertical-align: text-top;
+		background-image: url("../img/icons/social-icons-set@2x.png");
+		background-position: 40px 40px;
+		background-repeat: no-repeat;
+		background-size: 400px 320px;
+	}	 
+    
+}
+.twitter {
+	background-position: -80px -0px;
+}
+
+ .twitter:active {
+	color: white !important;
+	background-color: #48c4d2 ;
+    background-position: -80px -0px;
+}
+
+
+/*.social-twitter {
+	background-position: -80px -0px;
+}
+
+ .social-twitter:active {
+	background-position: -80px -40px ;
+	background-color: #48c4d2 ;
+}*/
+.forrst {
+	background-position: -0px -0px;
+}
+
+.forrst:active {
+	background-position: -0px -40px;
+	background-color: #5b9a68;
+}
+
+.dribbble {
+	background-position: -40px -0px;
+}
+
+.dribbble:active {
+	background-position: -40px -40px;
+	background-color: #ef5b92;
+}
+
+
+ /*.twitter:hover{
+	background-position: -80px -40px ;
+	background-color: #48c4d2 ;
+}*/
+
+.flickr {
+	background-position: -120px -0px;
+}
+
+a .flickr:active {
+	background-position: -120px -40px;
+	background-color: #f1628b;
+}
+
+.twitter2 {
+	background-position: -160px -0px;
+}
+
+.twitter2:active {
+	background-position: -160px -40px;
+	background-color: #48c4d2;
+}
+
+.facebook {
+	background-position: -200px -0px;
+}
+
+.facebook:active {
+	background-position: -200px -40px;
+	background-color: #3b5998;
+}
+
+.skype {
+	background-position: -240px -0px;
+}
+
+.skype:active {
+	background-position: -240px -40px;
+	background-color: #18b7f1;
+}
+
+.digg {
+	background-position: -280px -0px;
+}
+
+.digg:active {
+	background-position: -280px -40px;
+	background-color: #2882c6;
+}
+
+.google {
+	background-position: -320px -0px;
+}
+
+.google:active {
+	background-position: -320px -40px;
+	background-color: #dd4b39;
+}
+
+.html5 {
+	background-position: -360px -0px;
+}
+
+.html5:active {
+	background-position: -360px -40px;
+	background-color: #f3642c;
+}
+
+
+.linkedin {
+	background-position: -0px -80px;
+}
+
+.linkedin:active {
+	background-position: -0px -120px;
+	background-color: #71b2d0;
+}
+
+.lastfm {
+	background-position: -40px -80px;
+}
+
+.lastfm:active {
+	background-position: -40px -120px;
+	background-color: #d21309;
+}
+
+.vimeo-square {
+	background-position: -80px -80px;
+}
+
+.vimeo-square:active {
+	background-position: -80px -120px;
+	background-color: #62a0ad;
+}
+
+.yahoo {
+	background-position: -120px -80px;
+}
+
+.yahoo:active {
+	background-position: -120px -120px;
+	background-color: #ab64bc;
+}
+
+.tumblr {
+	background-position: -160px -80px;
+}
+
+.tumblr:active {
+	background-position: -160px -120px;
+	background-color: #3a5976;
+}
+
+.apple {
+	background-position: -200px -80px;
+}
+
+.apple:active {
+	background-position: -200px -120px;
+	background-color: #606060;
+}
+
+.microsoft {
+	background-position: -240px -80px;
+}
+
+.microsoft:active {
+	background-position: -240px -120px;
+	background-color: #230565;
+}
+
+.youtube {
+	background-position: -280px -80px;
+}
+
+.youtube:active {
+	background-position: -280px -120px;
+	background-color: #f45750;
+}
+
+.delicious {
+	background-position: -320px -80px;
+}
+
+.delicious:active {
+	background-position: -320px -120px;
+	background-color: #3274d1;
+}
+
+.rss {
+	background-position: -360px -80px;
+}
+
+.rss:active {
+	background-position: -360px -120px;
+	background-color: #fe9900;
+}
+
+
+.picassa {
+	background-position: -0px -160px;
+}
+
+.picassa:active {
+	background-position: -0px -200px;
+	background-color: #444;
+}
+
+.deviantart {
+	background-position: -40px -160px;
+}
+
+.deviantart:active {
+	background-position: -40px -200px;
+	background-color: #d0de21;
+}
+
+.technorati {
+	background-position: -80px -160px;
+}
+
+.technorati:active {
+	background-position: -80px -200px;
+	background-color: #7ac84f;
+}
+
+.stumbleupon {
+	background-position: -120px -160px;
+}
+
+.stumbleupon:active {
+	background-position: -120px -200px;
+	background-color: #eb4924;
+}
+
+.blogger {
+	background-position: -160px -160px;
+}
+
+.blogger:active {
+	background-position: -160px -200px;
+	background-color: #fb913f;
+}
+
+.wordpress {
+	background-position: -200px -160px;
+}
+
+.wordpress:active {
+	background-position: -200px -200px;
+	background-color: #464646;
+}
+
+.amazon {
+	background-position: -240px -160px;
+}
+
+.amazon:active {
+	background-position: -240px -200px;
+	background-color: #2f3842;
+}
+
+.appstore {
+	background-position: -280px -160px;
+}
+
+.appstore:active {
+	background-position: -280px -200px;
+	background-color: #0F73E4;
+}
+
+.paypal {
+	background-position: -320px -160px;
+}
+
+.paypal:active {
+	background-position: -320px -200px;
+	background-color: #32689a;
+}
+
+.myspace {
+	background-position: -360px -160px;
+}
+
+.myspace:active {
+	background-position: -360px -200px;
+	background-color: #003398;
+}
+
+
+.dropbox {
+	background-position: -0px -240px;
+}
+
+.dropbox:active {
+	background-position: -0px -280px;
+	background-color: #3083C7;
+}
+
+.windows {
+	background-position: -40px -240px;
+}
+
+.windows:active {
+	background-position: -40px -280px;
+	background-color: #01AEF3;
+}
+
+.pinterest {
+	background-position: -80px -240px;
+}
+
+.pinterest:active {
+	background-position: -80px -280px;
+	background-color: #cb2027;
+}
+
+.soundcloud {
+	background-position: -120px -240px;
+}
+
+.soundcloud:active {
+	background-position: -120px -280px;
+	background-color: #FF680D;
+}
+
+.googledrive {
+	background-position: -160px -240px;
+}
+
+.googledrive:active {
+	background-position: -160px -280px;
+	background-color: #FFCF63;
+}
+
+.android {
+	background-position: -200px -240px;
+}
+
+.android:active {
+	background-position: -200px -280px;
+	background-color: #A6C53B;
+}
+
+.behance {
+	background-position: -240px -240px;
+}
+
+.behance:active {
+	background-position: -240px -280px;
+	background-color: #18a3fe;
+}
+
+.instagram {
+	background-position: -280px -240px;
+}
+
+.instagram:active {
+	background-position: -280px -280px;
+	background-color: #E2D6C6;
+}
+
+.ebay {
+	background-position: -320px -240px;
+}
+
+.ebay:active {
+	background-position: -320px -280px;
+	background-color: #FE0000;
+}
+
+.google-plus {
+	background-position: -360px -240px;
+}
+
+.google-plus:active {
+	background-position: -360px -280px;
+	background-color: #d94a39;
+}

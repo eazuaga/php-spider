@@ -1,0 +1,89 @@
+﻿<div id="map_canvas" style=" width: 400px; height: 600px;"></div>
+<!--<script src="ViewModels/StoreLocation.js"></script>-->
+<script type="text/javascript" charset="utf-8">
+    
+    SetTitle("Location");
+    var map;
+    var div = document.getElementById("map_canvas");
+    map = window.display.deviceType !== "retina" ? plugin.google.maps.Map.getMap(div) : console.log("cargo plugin web");
+    var MyLocation;
+    function init(map, branch) {
+        var conce = branch[0];
+        var lat = new plugin.google.maps.LatLng(parseFloat(conce.latitude), parseFloat(conce.longitude));
+        map.clear();
+        map.moveCamera({
+            'target': lat,
+            'tilt': 90,
+            'zoom': 12,
+            'bearing': 0
+        });
+        setMarkers(map, branch);
+    }
+    function addMarker(map, latLng) {
+        map.addMarker({
+                'position': latLng
+            },
+            function attachEventClick(marker) {
+                marker.addEventListener(plugin.google.maps.event.MARKER_CLICK, function () {
+                    plugin.google.maps.external.launchNavigation({
+                        "from": MyLocation.latLng,
+                        "to": latLng
+                    });
+                });
+            }
+        );
+    }
+    setMarkers = function (map, locations) {
+        for (var i = 0; i < locations.length; i++) {
+            console.log(locations[i].name);
+            var conce = locations[i];
+            if (conce.latitude != null && conce.longitude != null) {
+                var myLatLng = new  plugin.google.maps.LatLng(parseFloat(conce.latitude), parseFloat(conce.longitude));
+                addMarker(map, myLatLng);
+
+            }
+
+        }
+    }
+    LoadLocation = function () {
+        Repository.GetCallBack('Branch', setLatitudeAndLongitude, true);
+    }
+    setLatitudeAndLongitude = function (branch) {
+        showMyLocation(map);
+        console.log("branch",branch);
+        init(map, branch);
+    }
+    function showMyLocation(map) {
+        map.clear();
+
+        var success = function (location) {
+            console.log("localiza");
+            MyLocation = location;
+            map.addMarker({
+                    'position': location.latLng,
+                    'icon': 'www/img/icono-maps2.png'
+                }
+                , function (marker) {
+                    map.animateCamera({
+                        'target': location.latLng
+                        ,'zoom': 12
+                    }, function () {
+                        marker.showInfoWindow();
+                    });
+                }
+            );
+			
+	
+        };
+
+        var error = function (result) {
+            alert("ERROR\n---\n" + result.error_message);
+        };
+        map.getMyLocation({ enableHighAccuracy: false }, success, error);
+
+    }
+    window.display.deviceType == "retina" ? Change2("Location") : LoadLocation();
+    
+    Animate("#map_canvas");
+</script>
+
